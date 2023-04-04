@@ -1,0 +1,323 @@
+//쿼리셀렉터
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <h1>JavaScript와 HTML</h1>
+
+    <ul>
+        <li>window 객체</li>
+        <li>선택자</li>
+        <li>속성과 메서드</li>
+        <li>이벤트</li>
+        <li>캔버스 API</li>
+    </ul>
+
+    <h1>window 객체</h1>
+    <p>웹개발을 위한 도구모음</p> -->
+
+    <!-- 자바스크립트 사용하고 싶을땐 <script> -->
+    <script>
+        //이 안은 일반 주석이 먹힌다.
+
+        //console.log(window);
+
+        /*
+
+            window 객체
+
+            1. 메세지 또는 컨펌 등
+            window.alert()
+            window.confirm()
+
+        */
+       //window.alert('저장되었습니다.');
+       //window.confirm('저장하시겠습니까?');
+
+
+       /*
+
+            2. 유저 정보 흭득
+
+            유저 정보에 기반한 웹 서비스를 개발할 때 사용된다.
+            예)위치기반 서비스, 모바일 또는 PC용 웹앱
+
+            window.navigator.geolocation
+            window.navigator.userAgent
+
+       */
+      //console.log(window.navigator.userAgent); //접속 환경
+      //console.log(window.navigator.geolocation); //유저 위치
+
+        /*
+
+            3. 브라우저 기록
+            앱 내의 뒤로가기 버튼 만들기 등에 사용될 수 있다.
+
+            window.history
+
+        */
+
+        //console.log(window.history);
+
+        /*
+            4. 데이터 요청
+
+            window.fetch()
+            window.XMLHttpRequest()
+
+        */
+       //console.log(window.fetch)
+       //console.log(window.XMLHttpRequest)
+
+       /*
+            5. 웹 스토리지
+            브라우저에 데이터를 저장할 수 있도록 한다
+            예) 로그인 토큰, 테마, 장바구니 등등
+
+            window.document.cookie
+            window.localStorage
+       */
+
+    //    console.log(window.document.cookie); //쿠키
+    //    console.log(window.localStorage); //로컬스토리지. 쿠키보다 더 많이 사용한다.
+    //    //쿠키는 4kb를 저장하고 로컬 스토리지는 5~10mb를 저장한다.
+
+    /*
+        6. 뷰 개발
+
+        window.document
+        window.document.documentElement
+        window.innerHeight
+
+    */
+
+        // console.log(window.document); //html 문서
+        // console.log(window.document.documentElement);
+        // console.log(window.innerHeight); //viewport의 높이
+
+
+
+
+    </script>
+
+    <!-- <h1>선택자</h1>
+
+    <ul>
+        <li>id 선택자</li>
+        <li>class 선택자</li>
+        <li>children 선택자</li>
+    </ul> -->
+
+    <!-- <h1>id 선택자</h1>
+
+    <ul>
+        <li id="foo">foo</li>
+        <li>bar</li>
+        <li>baz</li>
+    </ul>
+    <script>
+        //foo라는 id를 찾아 var foo에 대입
+        //window 객체는 생략이 가능하다.
+        var foo = document.getElementById('foo');
+
+        
+        console.log(foo);
+    </script> -->
+
+    <!-- <h1>class 선택자</h1>
+    
+    <ul>
+        <li class="item">foo</li>
+        <li class="item">bar</li>
+        <li class="item">baz</li>
+    </ul>
+
+    <script>
+        var items = document.getElementsByClassName('item');
+
+        console.log(items); //HTMLCollection(length)
+
+        console.log(items.length); //3
+
+        console.log(items[1]); //bar
+    </script> -->
+
+    <!-- <h1>children 선택자</h1>
+
+    <ul id="list">
+        <li>foo</li> 
+        <li>bar</li> 
+        <li>baz</li> 
+    </ul>
+
+    <script>
+        var list = document.getElementById('list');
+
+        var items = list.children; //children 선택자
+
+        console.log(items); //HTMLCollection(length)
+
+    </script> -->
+
+    <!-- <h1>엘리먼트 속성</h1>
+    <ul>
+        <li>attribute</li>
+        <li>classList</li>
+        <li>createElement</li>
+        <li>innerHTML</li>
+    </ul> -->
+
+    <!-- <h1>attribute</h1>
+    <p>엘리먼트의 attribute</p>
+
+    <input
+        type="text"
+        id="input"
+        name="q"
+        style="padding:0.5rem; width: 16rem;"
+        value="구글 검색"
+    > -->
+    <!-- 하늘색 글씨가 다 attribute -->
+
+    <!-- <script>
+
+        var input = document.getElementById('input');
+
+        //attribute에 접근
+        console.log(input.type); //text
+        console.log(input.id); //input
+        console.log(input.name); //q
+        console.log(input.value); //구글 검색
+        console.log(input.style.padding); //0.5rem
+        console.log(input.style.width); //16rem
+
+    </script> -->
+
+    <!-- <h1>classList</h1>
+    <p>엘리먼트의 클래스 리스트를 저장한다.</p>
+    
+    </ul>
+
+    <style>
+        .font-bold{
+            font-style: bold;
+        }
+        .text-italic{
+            font-style: italic;
+        }
+        .underline{
+            text-decoration : underline;
+        }
+
+    </style>
+
+
+    <ul>
+        <li id="foo" class="font-bold text-italic">foo</li>
+        <li>bar</li>
+        <li>baz</li>
+    </ul>
+
+    <script>
+        var foo = document.getElementById('foo');
+
+        console.log(foo.classList); //DOMTokenList(length);
+
+        console.log(foo.classList[0]); //font-bold
+        console.log(foo.classList[1]); //text-italic
+        console.log(foo.classList.length); // 2(클래스 갯수)
+
+        //클래스 이름 추가
+        foo.classList.add('underline');
+
+        //클래스 이름 삭제
+        foo.classList.remove('font-bold');
+
+
+    </script> -->
+
+    <!-- <h1>createElement</h1>
+    <p>새로운 엘리먼트를 생성한다.</p>
+
+    <ul id="list">
+        <li>foo</li>
+        <li>bar</li>
+    </ul>
+
+    <script>
+        //이벤트랑 같이 활용해서 페이지를 동적으로 활용
+
+        var list = document.getElementById('list');
+
+        var li = document.createElement('li');
+       
+
+        //textContent: 엘리먼트의 텍스트 컨텐츠를 저장한다.
+        li.textContent = 'baz'
+
+        console.log(li);
+
+        //마지막 자식을 주입
+        
+        list.appendChild(li);
+
+
+    </script> -->
+
+    <h1>innerHTML</h1>
+    <p>문자열의 형태로 tree를 저장한다.</p>
+
+    <div id="container">
+        <ul>
+            <li>foo</li>
+            <li>bar</li>
+            <li>baz</li>
+        </ul>
+    </div>
+
+    <script>
+        //콘솔에서 흰색 글자다 = 그냥 문자
+        var container = document.getElementById('container');
+
+        console.log(container.innerHTML);
+
+        console.log(typeof container.innerHTML); //string
+
+
+        // ` = backtick
+        // `` 이 사이 안에 써 놓은 코드는 문자열로 치환된다.
+        // backtick의 장점 : 줄바꿈이 된다.
+
+        //innerHTML 업데이트
+        container.innerHTML = `
+        <ul>
+            <li>기네스</li>
+            <li>하이네켄</li>
+            <li>버드와이저</li>
+        </ul>
+        `
+
+        //HTML DOM Elements 
+
+        //innerText 속성 내부의 텍스트에 접근한다
+
+        //nextElementSibling 형제를 선택한다(자기 바로 뒤에 있는 item)
+
+
+
+        
+    </script>
+
+    
+
+</body>
+</html>
+

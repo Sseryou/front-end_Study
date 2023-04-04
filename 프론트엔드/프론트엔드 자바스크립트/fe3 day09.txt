@@ -1,0 +1,428 @@
+<!-- <h1>Contact Form</h1>
+
+<style>
+    #form{
+        width: 20rem;
+    }
+    .form-group{
+        margin-bottom: 0.5rem;
+    }
+    label{
+        display: block;
+    }
+    input{
+        padding: 0.5rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    button[type=submit]{
+        padding: 0.5rem;
+    }
+    .error-message{
+        color: red;
+        margin: 0;
+    }
+    .hidden{
+        display: none;
+    }
+
+</style>
+
+<form action="" id="form">
+<div class="form-group">
+    <label for="">First name</label>
+    <input type="text" name="fname" placeholder="John">
+    <p id="fname-error" class="error-message hidden"></p>
+</div>
+<div class="form-group">
+    <label for="">Last name</label>
+    <input type="text" name="lname" placeholder="Doe">
+    <p id="lname-error" class="error-message hidden"></p>
+</div>
+<div class="form-group">
+    <label for="">Email</label>
+    <input type="text" name="email" placeholder="JohnDoe@example.com">
+    <p id="email-error" class="error-message hidden"></p>
+</div>
+<button type="submit">Submit</button>
+</form>
+
+<script>
+    var form = document.getElementById('form');
+
+    var fnameError = document.getElementById('fname-error');
+    var lnameError = document.getElementById('lname-error');
+    var emailError = document.getElementById('email-error');
+
+    form.addEventListener('submit' , (e) => {
+        e.preventDefault();
+
+        //인자로 form을 받는다.
+        var formData = new FormData(e.target);
+
+        //input name속성을 사용해서 value에 접근한다.
+        var fname = formData.get('fname');
+        var lname = formData.get('lname');
+        var email = formData.get('email');
+        
+        //fname input의 value에 접근
+        //console.log(fname);
+
+        //빈 문자열 파악하기
+        //console.log(fname === "");
+        //console.log(fname.length === 0);
+        //console.log(!fname);
+
+        //trim(): 문자열의 앞, 뒤 공백을 제거한다.
+        if(!fname.trim()){ //이름을 입력하지 않았을 때
+            errorHandler('이름을 입력하세요', fnameError);
+        }else if(fname.length < 3){
+            errorHandler('올바른 이름을 입력하세요', fnameError);
+        }else{ //이름을 입력했을 때
+            errorHandler(null, fnameError);
+        }
+
+        //성 유효성 검사
+        if(!lname.trim()){
+            errorHandler('성은 필수입니다', lnameError);
+        }else{
+            errorHandler(null, lnameError);
+        }
+
+        //이메일 유효성 검사
+        if(!email.trim()){
+            errorHandler('이메일은 필수입니다', emailError);
+        }else{
+            errorHandler(null, emailError);
+        }
+
+
+    });
+    //같은 함수가 반복되므로, 반복되는 부분을 함수로 만들어준다.
+    function errorHandler(error, container){
+        if(error){
+            container.classList.remove('hidden');
+            container.textContent = error;
+        } else{
+            container.classList.add('hidden');
+        }
+    }
+
+
+</script> -->
+
+
+
+
+
+<!-- <style>
+    .container{
+        width: 16rem;
+    }
+    label{
+        display: block;
+    }
+    input{
+        padding: 0.5rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .success{
+        color: #0a0;
+    }
+
+    .danger{
+        color: #f00;
+    }
+
+</style>
+
+
+<h1>유저이름 실시간 유효성 검사</h1>
+
+<div class="container">
+    <label for="">Username</label>
+    <input type="text" id="input">
+    <p id="message-container">유저이름을 입력하세요.</p>
+</div>
+
+<script>
+    var input = document.getElementById('input');
+    var messageContainer = document.getElementById('message-container');
+
+    input.addEventListener('keyup', (e) =>{
+        try{
+            var username = e.target.value;
+            console.log(username);
+
+            //유저이름이 없을때
+            if(!username){
+                throw '유저이름은 필수입니다'
+                //커스텀에러를 반환하게되면, 밑 코드를 실행하지 않는다.
+            }
+
+            if(username.length < 5){
+                throw '유저이름이 너무 짧습니다.'
+            }
+
+            //.match(글자) = 글자와 일치하는 글자를 찾는다. 
+            // 정규식 (reguler expression) : 문자열을 검색하기 위한 패턴을 제공한다.
+            if(username.match(/[^a-z0-9_]/)){
+                throw '알파벳 소문자, 숫자 그리고 언더스코어만 사용 가능합니다.'
+            }
+
+            messageContainer.innerHTML ='<span class="success">사용가능한 유저이름입니다</span>'
+
+
+            
+        } catch(error){
+            messageContainer.innerHTML =`<span class="danger">${error}</span>`;
+
+        }
+
+    });
+
+</script> -->
+
+
+
+
+<!-- <style>
+    body{
+        min-height: 1000px;
+    }
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border: 1px solid #ddd;
+    }
+    .container{
+        backdrop-filter: blur(8px);
+        display: flex;
+        align-items: center;
+    }
+    #btn{
+        border: none;
+        background-color: transparent;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+    nav{
+        backdrop-filter: blur(8px);
+    }
+    nav ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    nav a{
+        display: block;
+        text-align: center;
+        padding: 0.5rem;
+        text-decoration: none;
+        color: #555;
+        border-top: 1px solid #ddd;
+    }
+    nav a:hover{
+        color: #000;
+    }
+    main{
+        margin-top: 4rem;
+    }
+    .hidden{
+        display: none;
+    }
+
+</style>
+
+<header id="header">
+    <div class="container">
+        <button id="btn">&#9776;</button>
+    </div>
+    <nav class="hidden" id="nav">
+        <ul>
+            <li>
+                <a href="#">Link</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#">Link</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#">Link</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h1>Top navigation</h1>
+    <p>Lorem ipsum dolor,
+         sit amet consectetur adipisicing elit.
+          Ab dignissimos a fugit,
+           quos veritatis quae eaque,
+            officiis aliquam ea corrupti,
+             assumenda ipsam saepe ducimus deleniti consequuntur ex sequi natus hic?</p>
+
+</main>
+
+<script>
+
+    var btn = document.getElementById('btn');
+
+    btn.addEventListener('click', (e) =>{
+        var nav = document.getElementById('nav');
+
+        nav.classList.toggle('hidden');
+    });
+
+    window.addEventListener('click', (e) =>{
+        console.log(e.target); //이벤트가 발생한 엘리먼트
+
+        //화면에서 햄버거 버튼이 아닌 곳을 클릭했을 때
+        if(e.target !== btn){
+            nav.classList.add('hidden');
+        }
+
+
+    })
+
+</script> -->
+
+
+
+
+
+<!-- <style>
+    body{
+        height: 1000px;
+        margin: 0;
+    }
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        transition: background-color 0.5s;
+    }
+    .bg-image{
+        background-image: linear-gradient(to right, #0ef, #0af);
+        height: 400px;
+    }
+
+    .active{
+        background-color: #fff;
+    }
+    
+</style>
+
+<header id="header">
+Transparent NavBar
+</header>
+
+
+    <div class="bg-image"></div>
+
+
+<script>
+
+    var header = document.getElementById('header');
+
+    window.addEventListener('scroll', (e) => {
+        var scrollTop = document.documentElement.scrollTop;
+
+        console.log(scrollTop);
+
+        if(scrollTop > 50){
+            header.classList.add('active');
+        }else{
+            header.classList.remove('active');
+        }
+
+    });
+
+    
+</script> -->
+
+
+<style>
+    body{
+        height: 2000px;
+    }
+    #header{
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transition: top 0.2s;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #header.hidden{
+        top: -50px;
+    }
+
+    main{
+        margin-top: 75px;
+    }
+
+</style>
+
+
+<header id="header">
+Header
+</header>
+
+<main>
+        <h1>Switch NavBar</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, 
+            adipisicing elit. Incidunt nesciunt minus placeat hic reprehenderit quisquam odit corrupti vel, 
+            deleniti accusamus aliquid? Tempora modi necessitatibus harum accusantium cupiditate, 
+            obcaecati debitis perspiciatis.
+        </p>
+</main>
+
+
+<script>
+    
+    var header = document.getElementById('header');
+    var previousScrollTop = 0;
+    window.addEventListener('scroll', (e) => {
+
+        var scrollTop = document.documentElement.scrollTop;
+
+        console.log('이전 scroll top:', previousScrollTop);
+        console.log('현재 scroll top:', scrollTop);
+
+        if(scrollTop - previousScrollTop > 0){
+            //스크롤을 내리고 있을 때
+            header.classList.add('hidden');
+
+        }else{
+            //스크롤을 올리고 있을 때
+            header.classList.remove('hidden');
+        }
+
+        previousScrollTop = scrollTop;
+
+    });
+
+
+</script>
+

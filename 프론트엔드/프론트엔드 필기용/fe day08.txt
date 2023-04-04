@@ -1,0 +1,53 @@
+tailwind bootstrap
+
+프레임워크
+
+프론트 수업에서는 tailwind를 사용할 것이다.
+
+tailwind cdn 검색
+그리고 스크립트 src 붙여넣기
+
+sticky = fixed + static 스크롤을 하면 스태틱이 되고 스크롤이 없으면 fixed
+
+장점 : body 내에서 공간을 차지하고 있기 때문에 그 다음 엘리먼트가 밑으로 옴. 이미지가 가려지지 않음.
+
+
+inset-96 = top buttom right left 각각24rem
+앞의 숫자를 4로 나누면 몇rem인지 나온다.
+
+p = padding
+w = width
+
+flex = display : flex;
+
+hidden = display : none;
+
+inline-block : y축이 적용이 안됨
+
+테일윈드 대괄호는 개발자가 직접 값을 입력할수 있게 해준다.
+
+invisible = visivility : hidden; (엘리먼트가 안보이고, 공간도 차지하지 않음)
+collapse = visivility : collapse; ()
+
+breakpoint (최대사이즈 제한으로 반응형 구현)
+sm, md, lg, xl, 2xl
+=@media(min-width: 640~ 1536px){ }
+
+max-w-xs 
+max-width는 사이즈로 넣어야 함.
+
+프리픽스랑 일치하게 (단, 작은 값에는 좋지 않음.)
+max-w-screen-sm,md,lg,xl,2xl
+
+span을 사용하는이유
+background의 속성 때문에
+span으로 글자만 속성을 적용시킴.inline
+
+tracking-widest 글자 반경
+단위가 em임(element 기준), 폰트가 클수록 글자 간격도 커져야함. 그래서 기준을 엘리먼트로 된것
+letter spacing
+
+google font 이용
+
+폰트를 가져오면, 테일윈드를 쓰더라도 head에 style을 추가해야한다. CSS rule 복사붙여넣기
+

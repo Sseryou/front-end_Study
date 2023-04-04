@@ -1,0 +1,62 @@
+프론트엔드
+애플리케이션의 보여지는 부분(presentation layer)
+
+백엔드
+애플리케이션의 데이터 처리 부분(data access)
+
+프론트엔드 개발 언어
+
+HTML(Hyper Text Markup Language)
+
+웹페이지 데이터 표시
+
+CSS(Cascading Style Sheet)
+
+웹페이지 디자인 처리
+구조화된 스타일 언어
+
+JavaScript
+
+HTML과 CSS를 조작하여 동적인 페이지를 구현하는데 사용된다.
+
+백엔드 개발언어
+node.js .net go Java python Swipt php....
+
+php 세계적으로 서버구축용으로 많이 쓰이는 언어 (워드프레스. 페이스북 등..)
+
+Java 한국에서 가장 많이 쓰임. 전자정부프레임워크에서 사용
+
+Python 서버구축, 빅데이터, 머신러닝 등 다양한 분야에서 사용
+
+NodeJS JavaScript를 사용하여 서버를 구축할 수 있게 만든 언어
+(프론트엔드와 백을 둘다 할수 있는 언어)
+
+프론트엔드1
+HTML/CSS
+
+프론트엔드2
+HTML/CSS
+
+프론트엔드3
+JavaScript
+
+프론트엔드4
+React(프론트엔드 개발용 JavaScript 라이브러리)
+그룹프로젝트
+
+프론트엔드5
+소셜서비스 애플리케이션 백엔드 개발
+
+프론트엔드6
+소셜서비스 애플리케이션 프론트엔드 개발
+
+수업자료
+https://github.com/nigrojin
+추천사이트
+W3Schools, Google, stackoverflow
+
+vscode 사용
+
+
+W3Schools reference에서 다양한 엘리멘트를 볼수 있음
+

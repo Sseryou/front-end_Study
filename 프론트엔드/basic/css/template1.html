@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+    <title>template</title>
+    <style>
+        body{
+            font-family: 'Inconsolata', monospace;
+        }
+    </style>
+</head>
+<body class="bg-neutral-200">
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 p-2 w-full z-10 bg-black">
+        <ul class="flex">
+            <li class="w-1/4">
+                <a href="#" class="block p-2 text-center text-white hover:bg-white hover:text-black">HOME</a>
+            </li>
+            <li class="w-1/4">
+                <a href="#about" class="block p-2 text-center text-white hover:bg-white hover:text-black">ABOUT</a>
+            </li>
+            <li class="w-1/4">
+                <a href="#menu" class="block p-2 text-center text-white hover:bg-white hover:text-black">MENU</a>
+            </li>
+            <li class="w-1/4">
+                <a href="#where" class="block p-2 text-center text-white hover:bg-white hover:text-black">WHERE</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- MAIN IMAGE -->
+    <div class="h-[500px] bg-[url('https://www.w3schools.com/w3images/coffeehouse.jpg')] bg-cover bg-center grayscale-[50%]">
+        <div class="h-[450px] flex flex-col justify-center">
+            <h1 class="text-8xl text-center text-white">
+                the <br>
+                <span class="inline-block mt-8">
+                    Cafe
+                </span>
+            </h1>
+        </div>
+        <div class="mt-4 px-4 flex justify-between">
+            <span class="bg-black text-sm text-white px2 invisible md:visible">Open from 6am to 5pm</span>
+            <span class="text-sm text-white">15 Adr street, 5015</span>
+        </div>
+    </div>
+    
+    <main class="max-w-2xl mx-auto px-4">
+        <!-- ABOUT -->
+        <div id="about" class="py-16">
+            <h1 class="text-2xl text-center tracking-widest">
+                <span class="bg-black text-white px-2">ABOUT THE CAFE</span>
+            </h1>
+        </div>
+
+        <p class="text-lg my-4">
+            The Cafe was founded in blabla by Mr.
+            Smith in Lorem ipsum, 
+            dolor sit amet consectetur adipisicing elit. 
+            Ab et explicabo sed temporibus tenetur debitis porro autem, 
+            quo quos maxime impedit? Debitis quos enim aliquid dolore saepe, 
+            voluptate vitae ab.
+        </p>
+
+        <p class="text-lg my-4">
+            In addition to our full espresso and brew bar menu,
+            we serve fresh made-to-order breakfast and lunch sandwiches,
+            as well as a selection of sides and salads and other good stuff.
+        </p>
+
+    </main>
+
+    
+
+</body>
+</html>

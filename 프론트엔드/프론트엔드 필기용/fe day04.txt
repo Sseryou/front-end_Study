@@ -1,0 +1,54 @@
+display block일때는 width를 적용하면 나머지 부분은 margin으로 처리됨, 옆 공간이 비어도 옆으로 못옴
+
+inline블럭일때는 옆에 올 수 있음
+max-width, min-width 최대, 최소 너비
+최소 너비를 설정하면 창을 줄일때 스크롤이 생김(최소 이하로 줄지 않아서)
+
+overflow(콘텐츠가 넘쳤을때 처리할 방법을 선택)
+
+transform(콘텐츠를 변형함. translate(이동), scale(크기), rotate(회전))
+
+whitespace(여백을 어떻게 처리할것인지 결정. normal, nowrap 등...)
+
+float(엘리먼트를 왼쪽 또는 오른쪽으로 띄움)
+
+clear(clear: both;)
+
+flex(중요 , 모든 앱에서 자주 쓰는 레이아웃 속성)
+display: flex
+
+반응형 페이지: 창 크기에 따라서 길이에 맞게 레이아웃이 조정됨(ex 유튜브)
+반응형 페이지가 아닌 경우: 창 크기에 따라서 레이아웃이 조정되지 않음(ex 네이버)
+
+pre 태그 : 줄바꿈까지 인식함, 텍스트 적기 좋음
+   <pre>
+    FLEX CONTAINER 속성
+    -flex-direction(row) : item의 배열 방향
+    row|row-reverse|column|column-reverse
+
+    -flex-wrap(nowrap) : item을 감쌀 것인지 여부
+    nowrap|wrap|wrap-reverse
+
+    -flex-flow(row nowrap) : -flex-direction, -flex-wrap 속기
+
+    -justify-content(flex-start): item의 수평정렬(-flex-direction: row),
+    수직정렬(-flex-direction: column)
+    flex-start|flex-end|center|space-between|space-around|space-evenly
+
+    -align-items(stretch) : item의 수직정렬(-flex-direction : row), 
+    수평정렬(-flex-direction: column)
+    stretch|center|flex-start|flex-end|baseline
+
+
+    FLEX ITEM 속성
+    -flex-grow(0): item의 크기 증가
+    number
+    -flex-shrink(1): item의 크기 축소
+    number
+    -flex-basis(auto): item의 넓이
+    number | auto
+    -flex(0 1 auto): -flex-grow -flex-shrink
+
+    -order(0): item의 정렬 순서
+    number
+   </pre>

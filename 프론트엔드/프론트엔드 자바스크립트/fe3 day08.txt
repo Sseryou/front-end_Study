@@ -1,0 +1,224 @@
+<!-- <h1>뉴스레터</h1>
+
+<style>
+    #form{
+        width: 20rem;
+    }
+    .form-group{
+        display: flex;
+    }
+    input{
+        padding: 0.5rem;
+        flex-grow: 1
+    }
+    .hidden{
+        display: none;
+    }
+</style>
+
+
+<form action="" id="form">
+    <h1>뉴스레터</h1>
+    <div class="form-group">
+        <input type="text" value="jhon@example.com">
+        <button type="submit">구독하기</button>
+    </div>
+</form>
+
+<div id="success-message" class="hidden">
+    <h1>구독해주셔서 감사합니다</h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Reiciendis sequi maxime molestiae placeat nulla in tenetur necessitatibus magni?
+          Nihil deserunt perspiciatis, quia voluptatum distinctio sunt nostrum excepturi!
+           Accusantium,
+            praesentium mollitia?
+    </p>
+</div>
+
+<script>
+    var form = document.getElementById('form');
+    var successmessage = document.getElementById('success-message');
+
+
+    //폼 제출
+    form.addEventListener('submit', (e)=>{
+
+        //기본값을 실행하지 않음(지금 경우는 폼을 제출하지 않음)
+        e.preventDefault();
+
+        console.log(e); //이벤트 객체
+
+        //AJAX 요청(서버에 데이터 전송)
+        form.classList.add('hidden');
+        successmessage.classList.remove('hidden');
+        
+    });
+
+
+</script> -->
+
+
+<!-- <style>
+    .container{
+        width:29rem;
+    }
+    #input{
+        padding: 0.5rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    #list{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .item{
+        padding: 0.5rem;
+    }
+    .hidden{
+        display: none;
+    }
+
+</style>
+
+<h1>실시간 검색</h1>
+검색창에 쓴 글씨의 일부가 일치하면 리스트에 계속 남아있는다.
+
+<h1>Live Search</h1>
+
+<div class="container">
+    <input type="text" id="input" placeholder="검색">
+
+    <ul>
+        <li class="item">Guinness</li>
+        <li class="item">Heineken</li>
+        <li class="item">Budwiser</li>
+        <li class="item">Kloud</li>
+        <li class="item">Asahi</li>
+    </ul>
+</div>
+
+    
+
+
+
+<script>
+    var input = document.getElementById('input');
+
+    //keyup: 키에서 손가락을 땔 때 발생하는 이벤트
+    input.addEventListener('keyup', (e) => {
+        
+        //attribute (value)
+        //console.log(input.value);
+        //console.log(e.target.value);
+
+        var value = e.target.value.toLowerCase();
+        var items = document.getElementsByClassName('item');
+
+        console.log(value);
+
+        for(var i=0; i<items.length; i++){
+            var textContent = items[i].textContent.toLowerCase();
+
+            if(textContent.includes(value)){
+                //textContent가 value에 있는 값을 전부 포함하고있으면 true
+                //해당 아이템을 보이게 한다.
+                items[i].classList.remove('hidden');
+                
+            }else{
+
+                //해당 아이템을 보이지 않게 한다.
+                items[i].classList.add('hidden');
+            }
+        }
+
+    });
+
+</script> -->
+
+<h1>Contact Form</h1>
+
+<style>
+    #form{
+        width: 20rem;
+    }
+    .form-group{
+        margin-bottom: 0.5rem;
+    }
+    label{
+        display: block;
+    }
+    input{
+        padding: 0.5rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    button[type=submit]{
+        padding: 0.5rem;
+    }
+    .error-message{
+        color: red;
+        margin: 0;
+    }
+    .hidden{
+        display: none;
+    }
+
+</style>
+
+<form action="" id="form">
+<div class="form-group">
+    <label for="">First name</label>
+    <input type="text" name="fname" placeholder="John">
+    <p id="fname-error" class="error-message hidden"></p>
+</div>
+<div class="form-group">
+    <label for="">Last name</label>
+    <input type="text" name="lname" placeholder="Doe">
+    <p id="lname-error" class="error-message hidden"></p>
+</div>
+<div class="form-group">
+    <label for="">Email</label>
+    <input type="text" name="email" placeholder="JohnDoe@example.com">
+    <p id="email-error" class="error-message hidden"></p>
+</div>
+<button type="submit">Submit</button>
+</form>
+
+<script>
+    var form = document.getElementById('form')
+    var fnameError = document.getElementById('fname-error');
+    //var lnameError = document.getElementById('lname-error');
+    //var emailError = document.getElementById('email-error');
+
+    form.addEventListener('submit' , (e) => {
+        e.preventDefault();
+
+        //인자로 form을 받는다.
+        var formData = new FormData(e.target);
+
+        //input name속성을 사용해서 value에 접근한다.
+        var fname = formData.get('fname');
+        
+        //fname input의 value에 접근
+        console.log(fname);
+
+        //빈 문자열 파악하기
+        console.log(fname === "");
+        console.log(fname.length === 0);
+        console.log(!fname);
+
+        if(!fname.trim()){ //이름을 입력하지 않았을 때
+            fnameError.classList.remove('hidden');
+            fnameError.textContent = '이름을 입력하세요'
+        }else{ //이름을 입력했을 때
+            fnameError.classList.add('hidden');
+        }
+
+    });
+
+
+</script>
+
+

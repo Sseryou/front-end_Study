@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <!-- <h1>CSS</h1>
+
+    <h3>CSS 기초</h3>
+    <ul>
+        <li>CSS 선택자</li>
+        <li>단위, 색상 표기법</li>
+    </ul>
+
+    <h3>문자</h3>
+    <ul>
+        <li>폰트/텍스트</li>
+    </ul>
+
+    <h3>엘리먼트 스타일</h3>
+
+    <ul>
+        <li>color/background-color</li>
+        <li>border</li>
+        <li>display</li>
+        <li>width</li>
+        <li>height</li>
+        <li>padding</li>
+        <li>margin</li>
+        <li>overflow</li>
+        <li>box-sizing</li>
+        <li>transform</li>
+    </ul>
+
+    <h3>레이아웃</h3>
+    <ul>
+        <li>white-space</li>
+        <li>float</li>
+        <li>flex</li>
+        <li>grid</li>
+        <li>position</li>
+    </ul>
+
+    <h3>반응형</h3>
+    <ul>
+        <li>media 키워드</li>
+    </ul>
+
+    <h3>이미지</h3>
+    <ul>
+        <li>image/background</li>
+    </ul> -->
+
+
+    <!-- <h1>선택자 : 엘리먼트 선택자</h1>
+
+    <style>
+        ul{
+            border: 1px solid;
+        }
+        li{
+            text-decoration: line-through;
+        }
+    </style>
+
+    <ul>
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+    </ul> -->
+
+    <!-- <style>
+        ul{
+            border: 1px solid;
+        } /*엘리먼트 선택자*/
+        .line-through{
+            text-decoration: line-through;
+        }
+        .italic{
+            font-style: italic;
+        }
+    </style>
+
+    <h1>class 선택자</h1>
+
+    <ul class="border"> 
+        <li class="line-through">list item</li>
+        <li class="line-through italic">list item</li>
+        <li>list item</li>
+    </ul> -->
+
+    <!-- <h1>id 선택자</h1>
+
+    <style>
+        ul{
+            border: 1px solid;
+        }
+        #first {
+            text-decoration: line-through;
+        }
+    </style>
+
+    <ul>
+        <li id="first">list item</li>
+        <li>list item</li>
+        <li>list item</li>
+    </ul>  -->
+
+    <!-- <h1>children 선택자</h1>
+
+    <style>
+        #list2 li {
+            text-decoration: line-through;
+        }
+    </style>
+
+    <ul>
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+    </ul>
+
+    <ul id="list2">
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+    </ul> -->
+
+    <!-- <h1>pseudo 클래스</h1>
+    <p>특별한 상태의 엘리먼트를 선택한다</p>
+
+    <style>
+        /* selector:pseudo-class */
+
+        li:nth-child(2){
+            /* 두번째 엘리먼트를 선택함 */
+            font-style: italic;
+        }
+        li:hover{
+            /*마우스 커서를 올려 놓은 엘리먼트를 선택함*/
+            text-decoration: underline;
+        }
+    </style>
+
+    <ul>
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+    </ul> -->
+
+    <!-- <h1>pseudo 엘리먼트</h1>
+    <p>가상의 엘리먼트를 만들고 선택한다</p>
+
+    <style>
+        li::before {
+            content:'{';
+            color: #000;
+        }
+        li::after{
+            content:'}';
+            color: #000;
+        }
+    </style>
+
+    <ul>
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+    </ul> -->
+
+    <!-- <h1>형제 선택자</h1>
+
+    <style>
+        #first + li {
+            text-decoration: line-through;
+        }
+    </style>
+
+    <ul>
+        <li id="first">list item</li>
+        <li>list item</li>
+        <li>list item</li>
+    </ul> -->
+
+    <h1>CSS 단위</h1>
+
+    <style>
+        ul{
+            font-size: 1.5rem;
+        }
+        .px{
+            font-size: 16px;
+        }
+        .rem{
+            /*1rem = 브라우저의 기본 글자크기*/
+            font-size: 1rem;
+        }
+        .em{
+            /*1em = 부모 엘리먼트의 글자크기*/
+            font-size: 1em;
+        }
+        .percent{
+            /*100% = 부모 엘리먼트의 글자크기*/
+            font-size: 100%;
+        }
+        .vw{
+            /*100vw = view port의 넓이(width)*/
+            font-size: 10vw;
+        }
+        .vh{
+            /*100vh = view port의 높이(height)*/
+            font-size: 10vh;
+        }
+
+    </style>
+    <ul>
+        <li class="px">font-size: 16px</li>
+        <li class="rem">font-size: 1rem</li>
+        <li class="em">font-size: 1em;</li>
+        <li class="percent">font-size: 100%;</li>
+        <li class="vw">font-size: 10vw;</li>
+        <li class="vh">font-size: 10vh;</li>
+    </ul>
+
+
+
+
+</body>
+</html>

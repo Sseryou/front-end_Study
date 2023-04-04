@@ -1,0 +1,289 @@
+<!-- <h1>이벤트</h1>
+    <p>
+        웹페이지 내에서 유저의 행위
+        예) 클릭, 스크롤, 터치 등
+    </p>
+
+    <button id="btn">Button</button>
+
+    <script>
+        var btn = document.getElementById('btn');
+
+        //addEventListener(eventName, eventHandler)
+        btn.addEventListener('click', () => {
+            alert('lol');
+        });
+
+    </script> -->
+
+    <!-- <h1>캔버스 API</h1>
+    <p>
+        HTML에서 자바스크립트를 이용해서 그래픽을 표현할 수 있다.
+        예)그래프 그리기, 사진 편집, 애니메이션, 웹 게임 등
+    </p>
+    <style>
+        #canvas{
+            background-color: #000;
+        }
+    </style>
+
+    <canvas id="canvas" width="300" height="200"></canvas>
+
+    <script>
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d'); //펜
+
+        //얼굴
+        ctx.fillStyle = '#0ef';
+        //ctx.fillRect(x, y, width, height);
+        ctx.fillRect(0,100,100,100);
+
+        //눈
+        ctx.fillStyle = '#000';
+        ctx.fillRect(20,120,20,20);
+        ctx.fillRect(60,120,20,20);
+
+        //입
+        ctx.fillStyle = '#000';
+        ctx.fillRect(20,160,10,10);
+        ctx.fillRect(20,170,60,10);
+        ctx.fillRect(70,160,10,10);
+
+
+    </script> -->
+
+=======================================================
+examples.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<!-- <h1>강의가 맘에 들면 개추 ㅋㅋ</h1>
+
+<style>
+    #btn{
+        width: 2rem;
+        cursor: pointer;
+        fill: #ddd;
+    }
+    #btn.active{
+        fill:blue;
+    }
+</style>
+
+<svg 
+    id="btn"
+    xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 512 512"
+    >
+
+    <path d="M313.4 32.9c26 5.2 42.9 30.5 37.7 56.5l-2.3 11.4c-5.3 26.7-15.1 52.1-28.8 75.2H464c26.5 0 48 21.5 48 48c0 18.5-10.5 34.6-25.9 42.6C497 275.4 504 288.9 504 304c0 23.4-16.8 42.9-38.9 47.1c4.4 7.3 6.9 15.8 6.9 24.9c0 21.3-13.9 39.4-33.1 45.6c.7 3.3 1.1 6.8 1.1 10.4c0 26.5-21.5 48-48 48H294.5c-19 0-37.5-5.6-53.3-16.1l-38.5-25.7C176 420.4 160 390.4 160 358.3V320 272 247.1c0-29.2 13.3-56.7 36-75l7.4-5.9c26.5-21.2 44.6-51 51.2-84.2l2.3-11.4c5.2-26 30.5-42.9 56.5-37.7zM32 192H96c17.7 0 32 14.3 32 32V448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V224c0-17.7 14.3-32 32-32z"/>
+</svg>
+
+<script>
+    var btn = document.getElementById('btn');
+    btn.addEventListener('click', () => {
+        //classList.toggle() : class가 있으면 빼고 없으면 추가한다.
+        btn.classList.toggle('active');
+    });
+</script> -->
+
+<!-- <h1>더보기 버튼</h1>
+
+<style>
+    #container{
+        /* <버튼이 글 옆으로 오도록 inline로 설정> */
+        display: inline;
+        
+
+    }
+    #btn{
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+        color: #888;
+        padding: 0;
+    }
+    #btn.hidden{
+        display: none;
+    }
+</style>
+
+<p id="container">
+Lorem ipsum,
+ dolor sit amet consectetur adipisicing elit.
+  Amet maxime earum accusamus impedit odio enim ex modi,
+   corrupti ad explicabo at pariatur in inventore?
+    Eligendi qui nostrum voluptatibus temporibus aperiam?
+</p>
+
+<button id="btn">더보기</button>
+
+<script>
+
+    var container = document.getElementById('container');
+    var btn = document.getElementById('btn');
+
+    var fullContent = container.textContent;
+    var lessContent = fullContent.substring(0, 50) + '...';
+
+    console.log(fullContent);
+    console.log(lessContent);
+
+    //페이지가 처음 로드되었을 때
+    container.textContent = lessContent;
+
+    btn.addEventListener('click', () => {
+        container.textContent = fullContent;
+        //더보기 버튼을 사라지게 한다.
+        btn.classList.add('hidden');
+    })
+
+</script> -->
+
+<!-- <style>
+    html{
+        scroll-behavior: smooth;
+    }
+    body{
+        min-height: 2000px;
+    }
+    #btn{
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border: none;
+        background-color: black;
+        cursor: pointer;
+    }
+    #arrow-top{
+        width: 1rem;
+        fill: white;
+    }
+    .invisible{
+        visibility: hidden;
+    }
+
+</style> -->
+
+<!-- <h1>탑 버튼</h1> -->
+<!-- 어느정도 스크롤을 내려야만 상단으로 복귀시키는 버튼 생성
+버튼을 누르면 최상단으로 -->
+<!-- <p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+  Eum facere dolorem, 
+  praesentium illo at officia enim debitis consectetur possimus aspernatur harum et quis quod fugit? 
+  Id nobis et ipsum quos.  
+</p> -->
+
+
+
+<!-- <button id="btn" class="invisible">
+    <svg 
+        id="arrow-top"
+        xmlns="http://www.w3.org/2000/svg" 
+        viewBox="0 0 384 512">
+        <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/>
+    </svg>
+</button> -->
+
+<!-- <script>
+    var btn = document.getElementById('btn');
+    window.addEventListener('scroll', () => {
+       
+        console.log(document.documentElement.scrollTop);
+       
+        if(document.documentElement.scrollTop < 200){
+            btn.classList.add('invisible');
+        } else {
+            btn.classList.remove('invisible');
+        }
+    })
+
+    btn.addEventListener('click', () => {
+        document.documentElement.scrollTop = 0;
+    })
+
+
+</script>  -->
+
+
+<h1>Password toggle</h1>
+
+<style>
+    #container{
+        position: relative;
+        width: 16rem;
+    }
+    #input{
+        padding: 0.5rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    #btn{
+        /* relative를 기준으로 위치 */
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        background-color: transparent;
+        border: none;
+        padding: 0 1rem;
+        font-weight: 600;
+        cursor: pointer;
+    }
+ 
+</style>
+
+<div id="container">
+    <input type="password" id="input">
+    <button id="btn">Show</button>
+</div>
+
+
+<script>
+    var input = document.getElementById('input')
+    var btn = document.getElementById('btn')
+
+    btn.addEventListener('click', () => {
+        //attribute에 접근
+        console.log(input.type);
+        console.log(btn.textContent);
+        //attribute 업데이트
+        if(input.type === 'text'){
+            input.type = 'password'
+            btn.textContent = 'Show'
+        } else {
+            input.type = 'text'
+            btn.textContent = 'Hide'
+        }
+
+    })
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,127 @@
+align items (row)(수직정렬)
+
+align-items: stretch(기본값, 크기를 끝까지 늘림)
+align-items: baseline(원래 위치)
+align-items: center(가운데 정렬)
+align-items: flex-end(바닥)
+
+align items (column)(수평정렬)
+
+align-items: stretch(기본값, 크기를 끝까지 늘림)
+align-items: flex-start(왼쪽)
+align-items: center(가운데)
+align-items: flex-end(오른쪽)
+
+align-self(아이템 속성, 따로 배치할수 있게 해 줌)
+
+justify-content: space-between (컨텐츠 사이에 빈 공간을 넣는다)
+
+flex 속성
+
+flex grow (item이 남은 공간을 차지한다)
+flex shrink (item의 크기가 축소한다)
+flex basis (item의 넓이(width)) 대부분의 속성을 width로 교체 가능
+
+order (item의 순서)
+
+
+grid(격자 레이아웃 최적화 속성)
+
+/* 컬럼 병합 */
+    .col-span-2{
+        grid-column: span 2 / span 2;
+    }
+
+    span으로 병합을 해도 되고, column start와 end를 이용해서도 병합이 가능하다
+    start-span, start-end, end-span 등...
+
+    position(엘리먼트의 위치, 속성)
+
+    static 원래 자신 위치(고정, 포지션 값을 입력해도 움직이지 않음)
+    relative 원래 자신 위치 기준으로 이동시킴 (포지션 값을 입력 해줘야함)
+    absolute relative부모를 기준으로 위치함
+    fixed viewport 기준으로 위치함
+
+
+
+<h1>반응형 스타일</h1>
+
+<style>
+    /* Mobile first */
+    .title::after{
+        content: "Extra small devices";
+    }
+    @media (min-width: 640px){
+        title::after{
+            content:"Small devices";
+        }
+    }
+
+    @media (min-width: 768px){
+        title::after{
+            content:"Medium devices";
+        }
+    }
+
+    @media (min-width: 1024px){
+        title::after{
+            content:"Large devices";
+        }
+    }
+
+    @media (min-width: 1280x){
+        title::after{
+            content:"Extra Large devices";
+        }
+    }
+
+    @media (min-width: 1536px){
+        title::after{
+            content:"2 Extra large devices";
+        }
+    }
+
+    
+</style>
+
+<div class="container">
+    <h3 class="title">Devices: </h3>
+    <p>
+        Lorem ipsum dolor,
+         sit amet consectetur adipisicing elit. 
+         Consequatur maiores non commodi eligendi voluptatibus laboriosam minus. 
+         Non illo consectetur, omnis iste dolorem amet velit quaerat, 
+         itaque consequuntur necessitatibus tenetur odio?
+    </p>
+</div>
+
+css breakpoint
+
+688px 992px 1312px
+
+
+백그라운드 이미지
+백그라운드를 이용하면 화면의 축소, 확장에도 변하지 않음
+
+<h1>Images</h1>
+
+<style>
+    .item{
+        width: 200px;
+        height: 200px;
+    }
+    .object-cover{
+        object-fit: cover;
+    }
+    .bg-image{
+        background-image: url('https://www.google.com/imgres?imgurl=https%3A%2F%2Fitem.kakaocdn.net%2Fdo%2F4df35949efd9d681ba97979ce27c82cdf604e7b0e6900f9ac53a43965300eb9a&imgrefurl=https%3A%2F%2Fe.kakao.com%2Ft%2Fshaky-animals&tbnid=6CUvXBPx6GM96M&vet=12ahUKEwj33Mrtp-_8AhX-xosBHelgCgAQMygDegUIARDJAQ..i&docid=O_fHZDqF5oMhlM&w=210&h=210&q=%EB%B0%94%EB%93%A4%EB%B0%94%EB%93%A4%20%EB%8F%99%EB%AC%BC%EC%BD%98&ved=2ahUKEwj33Mrtp-_8AhX-xosBHelgCgAQMygDegUIARDJAQ');
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+
+<h3>img</h3>
+<img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fitem.kakaocdn.net%2Fdo%2F4df35949efd9d681ba97979ce27c82cdf604e7b0e6900f9ac53a43965300eb9a&imgrefurl=https%3A%2F%2Fe.kakao.com%2Ft%2Fshaky-animals&tbnid=6CUvXBPx6GM96M&vet=12ahUKEwj33Mrtp-_8AhX-xosBHelgCgAQMygDegUIARDJAQ..i&docid=O_fHZDqF5oMhlM&w=210&h=210&q=%EB%B0%94%EB%93%A4%EB%B0%94%EB%93%A4%20%EB%8F%99%EB%AC%BC%EC%BD%98&ved=2ahUKEwj33Mrtp-_8AhX-xosBHelgCgAQMygDegUIARDJAQ" alt="">
+
+<h3>background image</h3>
+<div class="item bg-image"></div>

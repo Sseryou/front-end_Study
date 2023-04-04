@@ -1,0 +1,76 @@
+검색 폼(form)
+
+input, button
+간단한 형태의 폼 만들기
+
+<style>
+    form{
+        border: 1px dashed;
+        max-width: 24rem;
+        /* top/bottom left/right */
+        margin: 0 auto;
+        display: flex;
+    }
+    input{
+        padding: 0.5rem;
+        flex-grow: 1;
+    }
+    button{
+        cursor: pointer;
+    }
+</style>
+
+<form action="#">
+    <input type="text" placeholder="Search Google">
+    <button type="submit">Submit</button>
+</form>
+
+다른 폼 예제
+
+Select 활용
+form이 가운데 있으면 max-width, margin auto 활용
+    ( max-width: 24rem;
+        margin: 0 auto;)
+
+
+Select
+라벨이 붙음
+셀렉트와 옵션은 같이 붙어다님 -> 옵션 중에서 하나를 고르게 함(드롭다운 등...)
+value값 -> 서버에 제출됨
+
+테이블 안의 scope 속성 = 보이지 않는 제목
+CSS style 안에서
+
+td[scope=row]{
+        font-weight: bold;
+    }
+
+    scope가 row인 속성만 골라서 적용 가능.
+
+
+odd는 홀수행, even은 짝수행
+tbody tr:nth-child(odd){
+        background-color: #ddd;
+    }
+    psudo코드 적용
+
+table{
+        border-collapse: collapse;
+    }
+    테이블 사이 사이의 빈공간을 없앤다.
+    기본값 separate.
+
+
+    ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    불필요한 ul의 기본값 삭제.
+
+     .container:hover ul{
+        display: block;
+    }
+    container에 호버했을때의 ul에 적용시킬 내용을 작성할수 있다.
+
+    드롭다운 버튼을 만들때에만 주로 position: absolute;가 사용된다.

@@ -1,0 +1,357 @@
+node.js
+
+서버프로그래밍에도 이용됨
+
+node.js 다운로드
+
+
+cmd node -v로 버전 확인가능
+
+cmd에서 실행
+
+
+
+npm list -g
+패키지 매니저
+
+npm을 설치해주어야할 필요가 있음
+npm install nodemon -g
+
+cmd 킨 후 cd 자바스크립트 폴더경로 입력 후 nodemon 입력
+
+또는
+cmd에서 nodemon 자바스크립트 파일경로 입력
+
+
+
+
+console.log();로 출력한다.
+자바스크립트 경로를 복사
+
+
+
+
+//console.log("hello JavaScript!");
+
+/*
+
+    JavaScript
+
+    목차
+
+    1. 데이터 타입
+    2. 연산자
+    3. 조건문
+    4. 반복문
+    5. 변수와 상수
+    6. 함수
+    7. 배열
+    8. 객체
+    9. 클래스
+    10. 에러와 예외처리
+    11. 비동기 작업
+    12. 프로미스
+    13. ES6 문법
+    14. 정규식
+    15. JSON
+
+*/
+
+/*
+    데이터 타입
+
+    1. String(문자열)
+    2. Number
+    3. Boolean
+    4. Null
+    5. undefined
+    6. BigInt
+*/
+
+/*
+    1. String(문자열)
+
+    연속된 문자
+    ' ', "" 안에 값을 작성한다
+    
+*/
+// var foo = 'bar';
+// console.log(foo); //bar
+// console.log(typeof foo); //string
+
+// console.log(foo[0]); //배열(숫자열) 첫번째 (0,1,2) -> b
+// console.log(foo[1]); //배열(숫자열) 두번째 (0,1,2) -> a
+// console.log(foo[2]); //배열(숫자열) 세번째 (0,1,2) -> r
+// //자바스크립트에는 char 타입이 없다!
+// //자바스크립트는 ;를 생략 가능하다.
+
+// console.log(foo.length); //문자열 길이 = 3
+
+/*
+    Number
+
+    -(2^1024 -1)에서 2^1024-1 사이의 숫자를 나타낸다.
+
+    값의 종류 :
+        정수, 소수, NaN(Not a Number), +Infinity, -Infinity
+
+
+
+*/
+// //정수
+// var year = 2023;
+// console.log(year);
+// console.log(typeof year);
+
+// //소수
+// var pi = 3.14
+// console.log(pi);
+// console.log(typeof pi);
+
+// //NaN
+// var nan = 2 -'foo';
+// console.log(nan);
+
+// //Number타입의 최대 값
+// var max_value = Number.MAX_VALUE;
+// console.log(max_value);
+
+
+// //Number타입의 최소 값
+// var negative_max_value = -Number.MAX_VALUE;
+// console.log(negative_max_value);
+
+
+// //양의 무한대
+// var infinity = Number.MAX_VALUE * 1.1;
+// console.log(infinity); //Infinity
+
+// var negative_infinity = -Number.MAX_VALUE * 1.1;
+// console.log(negative_infinity);
+
+/*
+    Boolean
+    참 또는 거짓의 값을 갖는다 (true, false)
+
+
+
+*/
+
+// var bool = true;
+// console.log(bool);
+// console.log(typeof bool); //boolean
+
+
+// // //비교연산이나 논리연산은 boolean값을 반환한다.
+// console.log(1 > 0); //true
+// console.log(1 == 2); //false
+
+
+/*
+    Null
+    '무효' 또는 '없는' 의 상태를 나타낸다.
+*/
+
+// var foo = null;
+// console.log(foo); //null
+// console.log(typeof foo); //object
+
+
+/*
+    undefined
+    정의되지 않은 변수를 나타낸다.
+*/
+
+// var x;
+// console.log(x);
+// console.log(typeof x); //undefined
+
+/*
+    BigInt
+    안전한 정수(Safe Integer) 밖의 정수를 나타낸다.
+    Number 타입 값의 뒤에 n을 붙여 선언한다.
+
+    * 안전한 정수 : -(2^53 -1) 에서 2^53 -1 사이의 정수
+*/
+
+// //안전한 정수 (최대)
+
+// var max_safe_integer = Number.MAX_SAFE_INTEGER;
+// console.log(max_safe_integer);
+
+// //안전한 정수 (최소)
+// var min_safe_integer = Number.MIN_SAFE_INTEGER;
+// console.log(min_safe_integer);
+
+// //Number타입은 안전한 정수 밖의 정수를 정확하게 저장할 수 없다.
+// var not_safe_integer = 9999999999999999999;
+// console.log(not_safe_integer); // 1000000000000
+
+// var bigint = 999999999999999999n;
+// console.log(bigint);
+// console.log(typeof bigint); //BigInt
+
+
+/*
+    연산자
+
+    1. 수리연산자
+    2. 할당연산자
+    3. 비교연산자
+    4. 논리연산자
+    5. 타입연산자
+*/
+
+
+/*
+    수리연산자
+
+    1. 사칙연산
+    + - * /
+
+    2. 증가 연산자
+    ++
+
+    3. 감소 연산자
+    --
+
+    4. 제곱 연산자
+    **
+    5. 계수 연산자
+    %
+
+*/
+
+//사칙연산
+
+// var add = 1 + 1;
+// var subtract = 2 - 1;
+// var divide = 1 / 2;
+// var multiply = 1 * 1;
+
+// console.log('덧셈:', add);
+// console.log('뺄셈:',subtract);
+// console.log('나눗셈:',divide);
+// console.log('곱셈:',multiply);
+
+//증가연산자
+
+// var i = 1;
+// i++;
+// console.log(i);
+
+//제곱 연산자(지수)
+// var exp = 2 ** 7;
+// console.log(exp);
+
+//계수 연산자(나머지)
+// var mod = 5 % 2;
+// console.log(mod); //1
+
+/*
+    할당연산자
+    
+    1. 변수할당연산자
+    =
+
+    2. 덧셈할당연산자
+    +=
+
+    3. 뺄셈할당연산자
+    -=
+
+    4. 곱셈할당연산자
+    *=
+
+    5. 나눗셈할당연산자
+    /=
+
+    6. 제곱할당연산자
+    **=
+
+    7. 계수할당연산자
+    %=
+*/
+
+
+//변수할당연산자
+// var foo = 'bar'
+// console.log(foo);
+
+//덧셈할당연산자
+
+// var longVariablesName = 1;
+// //longVariablesName = longVariablesName + 1 과 같다
+// longVariablesName += 1;
+// console.log(longVariablesName); //2
+
+/*
+    비교연산자
+
+    1. 동등연산자 ==
+    2. 비동등연산자 !=
+    3. 엄격동등연산자 ===
+    4. 엄격비동등연산자 !==
+    5. greater then 연산자 >
+    6. greater then or equal 연산자 >=
+    7. less then 연산자 <
+    8. less then or equal 연산자 <=
+*/
+
+//동등연산
+// console.log('동등', 2023 == 2023); //true
+// console.log('동등', 2023 == '2023'); //true
+// console.log('동등', null == undefined); //true
+
+//비동등연산
+// console.log('비동등', 2023 != 2023); //false
+// console.log('비동등', 2023 != '2023'); //false
+// console.log('비동등', null != undefined); //false
+
+
+//엄격동등연산
+// console.log('엄격동등', 2023 === 2023); //true
+// console.log('엄격동등', 2023 === '2023'); //false
+// console.log('엄격동등', null === undefined) //false
+
+//엄격비동등연산
+// console.log('엄격비동등', 2023 !== 2023); //false
+// console.log('엄격비동등', 2023 !== '2023'); //true
+// console.log('엄격비동등', null !== undefined) //true
+
+//greater then
+//console.log(1 > 0); //true
+
+/*
+    논리연산자
+
+    1. AND (그리고)
+    expr 1 && expr 2
+
+    2. OR (또는)
+    expr 1 || expr 2
+
+    3. ! (NOT)
+    !expr
+
+*/
+
+//AND
+console.log(1 > 0 && 1 < 2); //true , 두 조건식이 전부 true일때 true
+
+//OR
+console.log(1 > 0 || 1 > 2); //true , 둘 중 하나만 true여도 true
+
+//NOT (부정)
+console.log(!(1>0)); //false , true를 false로 false를 true로 바꿈
+console.log(!true); //false
+
+//boolean 타입이 아닌 다른 데이터 타입을 부정할 경우
+
+console.log('Not null', !null); //true
+
+console.log('Not undefined', !undefined); //true
+
+console.log('Not zero', !0); //true
+
+console.log('Not 빈문자열', !""); //true
