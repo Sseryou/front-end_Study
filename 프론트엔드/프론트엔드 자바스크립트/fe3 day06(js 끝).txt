@@ -1,0 +1,48 @@
+//2023.03.27
+
+/*
+    객체와 JSON 
+
+    JSON(JavaScript Object Notation)
+    자바스크립트 객체를 저장 또는 이동하기 위하여 사용되는 텍스트 포맷
+
+    1. 객체와 JSON
+    2. JSON.stringify()
+    3. JSON.parse()
+
+*/
+
+// //1 객체와 JSON
+
+// var o = {foo : 'bar'};
+
+// //밖을 '로 감싸주고, 내부 함수 및 객체를 큰 따음표(")로 감싸준다.
+
+// var json = '{"foo" : "bar"}' //o 객체를 JSON으로 표현
+
+// console.log(typeof o); //object
+// console.log(typeof json); //string
+
+
+
+// //2 JSON.stringify()
+// // 객체를 JSON 포맷으로 변환한다.
+
+// var o = {foo:'bar'};
+// var json = JSON.stringify(o);
+
+// console.log(json); //JSON 포맷
+// console.log(typeof json); //string
+// //자바스크립트 객체를 저장할때. 저장 직전 또는 전송 직전
+
+// // JSON.parse()
+// // JSON 포맷을 객체로 변환한다.
+
+// var json = '{"foo" : "bar"}';
+
+// var o = JSON.parse(json);
+
+// console.log(o); //{foo : 'bar'}; //객체
+// console.log(typeof o); //object
+
+

@@ -1,0 +1,18 @@
+https://owlcarousel2.github.io/OwlCarousel2/demos/autoplay.html
+
+
+구글지도를 이용하면 html로 복사 붙여넣기가 가능하다.
+
+
+컨셉 : 커피숍 소개 및 메뉴
+찾아오는 길 등 포함
+
+
+구현할것
+사이드바
+맨 위의 네비게이션 메뉴(사이드바가 있으니 따라오지 않음, 단, 사이드바는 따라와야함)
+
+
+
+
+크게 header main footer로 나누기

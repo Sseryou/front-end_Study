@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<!-- <h1>강의가 맘에 들면 개추 ㅋㅋ</h1>
+
+<style>
+    #btn{
+        width: 2rem;
+        cursor: pointer;
+        fill: #ddd;
+    }
+    #btn.active{
+        fill:blue;
+    }
+</style>
+
+<svg 
+    id="btn"
+    xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 512 512"
+    >
+
+    <path d="M313.4 32.9c26 5.2 42.9 30.5 37.7 56.5l-2.3 11.4c-5.3 26.7-15.1 52.1-28.8 75.2H464c26.5 0 48 21.5 48 48c0 18.5-10.5 34.6-25.9 42.6C497 275.4 504 288.9 504 304c0 23.4-16.8 42.9-38.9 47.1c4.4 7.3 6.9 15.8 6.9 24.9c0 21.3-13.9 39.4-33.1 45.6c.7 3.3 1.1 6.8 1.1 10.4c0 26.5-21.5 48-48 48H294.5c-19 0-37.5-5.6-53.3-16.1l-38.5-25.7C176 420.4 160 390.4 160 358.3V320 272 247.1c0-29.2 13.3-56.7 36-75l7.4-5.9c26.5-21.2 44.6-51 51.2-84.2l2.3-11.4c5.2-26 30.5-42.9 56.5-37.7zM32 192H96c17.7 0 32 14.3 32 32V448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V224c0-17.7 14.3-32 32-32z"/>
+</svg>
+
+<script>
+    var btn = document.getElementById('btn');
+    btn.addEventListener('click', () => {
+        //classList.toggle() : class가 있으면 빼고 없으면 추가한다.
+        btn.classList.toggle('active');
+    });
+</script> -->
+
+<!-- <h1>더보기 버튼</h1>
+
+<style>
+    #container{
+        /* <버튼이 글 옆으로 오도록 inline로 설정> */
+        display: inline;
+        
+
+    }
+    #btn{
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+        color: #888;
+        padding: 0;
+    }
+    #btn.hidden{
+        display: none;
+    }
+</style>
+
+<p id="container">
+Lorem ipsum,
+ dolor sit amet consectetur adipisicing elit.
+  Amet maxime earum accusamus impedit odio enim ex modi,
+   corrupti ad explicabo at pariatur in inventore?
+    Eligendi qui nostrum voluptatibus temporibus aperiam?
+</p>
+
+<button id="btn">더보기</button>
+
+<script>
+
+    var container = document.getElementById('container');
+    var btn = document.getElementById('btn');
+
+    var fullContent = container.textContent;
+    var lessContent = fullContent.substring(0, 50) + '...';
+
+    console.log(fullContent);
+    console.log(lessContent);
+
+    //페이지가 처음 로드되었을 때
+    container.textContent = lessContent;
+
+    btn.addEventListener('click', () => {
+        container.textContent = fullContent;
+        //더보기 버튼을 사라지게 한다.
+        btn.classList.add('hidden');
+    })
+
+</script> -->
+
+<!-- <style>
+    html{
+        scroll-behavior: smooth;
+    }
+    body{
+        min-height: 2000px;
+    }
+    #btn{
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border: none;
+        background-color: black;
+        cursor: pointer;
+    }
+    #arrow-top{
+        width: 1rem;
+        fill: white;
+    }
+    .invisible{
+        visibility: hidden;
+    }
+
+</style> -->
+
+<!-- <h1>탑 버튼</h1> -->
+<!-- 어느정도 스크롤을 내려야만 상단으로 복귀시키는 버튼 생성
+버튼을 누르면 최상단으로 -->
+<!-- <p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+  Eum facere dolorem, 
+  praesentium illo at officia enim debitis consectetur possimus aspernatur harum et quis quod fugit? 
+  Id nobis et ipsum quos.  
+</p> -->
+
+
+
+<!-- <button id="btn" class="invisible">
+    <svg 
+        id="arrow-top"
+        xmlns="http://www.w3.org/2000/svg" 
+        viewBox="0 0 384 512">
+        <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/>
+    </svg>
+</button> -->
+
+<!-- <script>
+    var btn = document.getElementById('btn');
+    window.addEventListener('scroll', () => {
+       
+        console.log(document.documentElement.scrollTop);
+       
+        if(document.documentElement.scrollTop < 200){
+            btn.classList.add('invisible');
+        } else {
+            btn.classList.remove('invisible');
+        }
+    })
+
+    btn.addEventListener('click', () => {
+        document.documentElement.scrollTop = 0;
+    })
+
+
+</script>  -->
+
+
+<!-- <h1>Password toggle</h1>
+
+<style>
+    #container{
+        position: relative;
+        width: 16rem;
+    }
+    #input{
+        padding: 0.5rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    #btn{
+        /* relative를 기준으로 위치 */
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        background-color: transparent;
+        border: none;
+        padding: 0 1rem;
+        font-weight: 600;
+        cursor: pointer;
+    }
+ 
+</style>
+
+<div id="container">
+    <input type="password" id="input">
+    <button id="btn">Show</button>
+</div>
+
+
+<script>
+    var input = document.getElementById('input')
+    var btn = document.getElementById('btn')
+
+    btn.addEventListener('click', () => {
+        //attribute에 접근
+        console.log(input.type);
+        console.log(btn.textContent);
+        //attribute 업데이트
+        if(input.type === 'text'){
+            input.type = 'password'
+            btn.textContent = 'Show'
+        } else {
+            input.type = 'text'
+            btn.textContent = 'Hide'
+        }
+
+    })
+
+
+
+</script> -->
+
+<!-- <h1>뉴스레터</h1>
+
+<style>
+    #form{
+        width: 20rem;
+    }
+    .form-group{
+        display: flex;
+    }
+    input{
+        padding: 0.5rem;
+        flex-grow: 1
+    }
+    .hidden{
+        display: none;
+    }
+</style>
+
+
+<form action="" id="form">
+    <h1>뉴스레터</h1>
+    <div class="form-group">
+        <input type="text" value="jhon@example.com">
+        <button type="submit">구독하기</button>
+    </div>
+</form>
+
+<div id="success-message" class="hidden">
+    <h1>구독해주셔서 감사합니다</h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Reiciendis sequi maxime molestiae placeat nulla in tenetur necessitatibus magni?
+          Nihil deserunt perspiciatis, quia voluptatum distinctio sunt nostrum excepturi!
+           Accusantium,
+            praesentium mollitia?
+    </p>
+</div>
+
+<script>
+    var form = document.getElementById('form');
+    var successmessage = document.getElementById('success-message');
+
+
+    //폼 제출
+    form.addEventListener('submit', (e)=>{
+
+        //기본값을 실행하지 않음(지금 경우는 폼을 제출하지 않음)
+        e.preventDefault();
+
+        console.log(e); //이벤트 객체
+
+        //AJAX 요청(서버에 데이터 전송)
+        form.classList.add('hidden');
+        successmessage.classList.remove('hidden');
+        
+    });
+
+
+</script> -->
+
+
+<!-- <style>
+    .container{
+        width:29rem;
+    }
+    #input{
+        padding: 0.5rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    #list{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .item{
+        padding: 0.5rem;
+    }
+    .hidden{
+        display: none;
+    }
+
+</style>
+
+<h1>실시간 검색</h1>
+검색창에 쓴 글씨의 일부가 일치하면 리스트에 계속 남아있는다.
+
+<h1>Live Search</h1>
+
+<div class="container">
+    <input type="text" id="input" placeholder="검색">
+
+    <ul>
+        <li class="item">Guinness</li>
+        <li class="item">Heineken</li>
+        <li class="item">Budwiser</li>
+        <li class="item">Kloud</li>
+        <li class="item">Asahi</li>
+    </ul>
+</div>
+
+    
+
+
+
+<script>
+    var input = document.getElementById('input');
+
+    //keyup: 키에서 손가락을 땔 때 발생하는 이벤트
+    input.addEventListener('keyup', (e) => {
+        
+        //attribute (value)
+        //console.log(input.value);
+        //console.log(e.target.value);
+
+        var value = e.target.value.toLowerCase();
+        var items = document.getElementsByClassName('item');
+
+        console.log(value);
+
+        for(var i=0; i<items.length; i++){
+            var textContent = items[i].textContent.toLowerCase();
+
+            if(textContent.includes(value)){
+                //textContent가 value에 있는 값을 전부 포함하고있으면 true
+                //해당 아이템을 보이게 한다.
+                items[i].classList.remove('hidden');
+                
+            }else{
+
+                //해당 아이템을 보이지 않게 한다.
+                items[i].classList.add('hidden');
+            }
+        }
+
+    });
+
+</script> -->
+
+<!-- <h1>Contact Form</h1>
+
+<style>
+    #form{
+        width: 20rem;
+    }
+    .form-group{
+        margin-bottom: 0.5rem;
+    }
+    label{
+        display: block;
+    }
+    input{
+        padding: 0.5rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    button[type=submit]{
+        padding: 0.5rem;
+    }
+    .error-message{
+        color: red;
+        margin: 0;
+    }
+    .hidden{
+        display: none;
+    }
+
+</style>
+
+<form action="" id="form">
+<div class="form-group">
+    <label for="">First name</label>
+    <input type="text" name="fname" placeholder="John">
+    <p id="fname-error" class="error-message hidden"></p>
+</div>
+<div class="form-group">
+    <label for="">Last name</label>
+    <input type="text" name="lname" placeholder="Doe">
+    <p id="lname-error" class="error-message hidden"></p>
+</div>
+<div class="form-group">
+    <label for="">Email</label>
+    <input type="text" name="email" placeholder="JohnDoe@example.com">
+    <p id="email-error" class="error-message hidden"></p>
+</div>
+<button type="submit">Submit</button>
+</form>
+
+<script>
+    var form = document.getElementById('form');
+
+    var fnameError = document.getElementById('fname-error');
+    var lnameError = document.getElementById('lname-error');
+    var emailError = document.getElementById('email-error');
+
+    form.addEventListener('submit' , (e) => {
+        e.preventDefault();
+
+        //인자로 form을 받는다.
+        var formData = new FormData(e.target);
+
+        //input name속성을 사용해서 value에 접근한다.
+        var fname = formData.get('fname');
+        var lname = formData.get('lname');
+        var email = formData.get('email');
+        
+        //fname input의 value에 접근
+        //console.log(fname);
+
+        //빈 문자열 파악하기
+        //console.log(fname === "");
+        //console.log(fname.length === 0);
+        //console.log(!fname);
+
+        //trim(): 문자열의 앞, 뒤 공백을 제거한다.
+        if(!fname.trim()){ //이름을 입력하지 않았을 때
+            errorHandler('이름을 입력하세요', fnameError);
+        }else if(fname.length < 3){
+            errorHandler('올바른 이름을 입력하세요', fnameError);
+        }else{ //이름을 입력했을 때
+            errorHandler(null, fnameError);
+        }
+
+        //성 유효성 검사
+        if(!lname.trim()){
+            errorHandler('성은 필수입니다', lnameError);
+        }else{
+            errorHandler(null, lnameError);
+        }
+
+        //이메일 유효성 검사
+        if(!email.trim()){
+            errorHandler('이메일은 필수입니다', emailError);
+        }else{
+            errorHandler(null, emailError);
+        }
+
+
+    });
+    //같은 함수가 반복되므로, 반복되는 부분을 함수로 만들어준다.
+    function errorHandler(error, container){
+        if(error){
+            container.classList.remove('hidden');
+            container.textContent = error;
+        } else{
+            container.classList.add('hidden');
+        }
+    }
+
+
+</script> -->
+
+<!-- <style>
+    .container{
+        width: 16rem;
+    }
+    label{
+        display: block;
+    }
+    input{
+        padding: 0.5rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .success{
+        color: #0a0;
+    }
+
+    .danger{
+        color: #f00;
+    }
+
+</style>
+
+
+<h1>유저이름 실시간 유효성 검사</h1>
+
+<div class="container">
+    <label for="">Username</label>
+    <input type="text" id="input">
+    <p id="message-container">유저이름을 입력하세요.</p>
+</div>
+
+<script>
+    var input = document.getElementById('input');
+    var messageContainer = document.getElementById('message-container');
+
+    input.addEventListener('keyup', (e) =>{
+        try{
+            var username = e.target.value;
+            console.log(username);
+
+            //유저이름이 없을때
+            if(!username){
+                throw '유저이름은 필수입니다'
+                //커스텀에러를 반환하게되면, 밑 코드를 실행하지 않는다.
+            }
+
+            if(username.length < 5){
+                throw '유저이름이 너무 짧습니다.'
+            }
+
+            //.match(글자) = 글자와 일치하는 글자를 찾는다. 
+            // 정규식 (reguler expression) : 문자열을 검색하기 위한 패턴을 제공한다.
+            if(username.match(/[^a-z0-9_]/)){
+                throw '알파벳 소문자, 숫자 그리고 언더스코어만 사용 가능합니다.'
+            }
+
+            messageContainer.innerHTML ='<span class="success">사용가능한 유저이름입니다</span>'
+
+
+            
+        } catch(error){
+            messageContainer.innerHTML =`<span class="danger">${error}</span>`;
+
+        }
+
+    });
+
+</script> -->
+
+<!-- <style>
+    body{
+        min-height: 1000px;
+    }
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border: 1px solid #ddd;
+    }
+    .container{
+        backdrop-filter: blur(8px);
+        display: flex;
+        align-items: center;
+    }
+    #btn{
+        border: none;
+        background-color: transparent;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+    nav{
+        backdrop-filter: blur(8px);
+    }
+    nav ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    nav a{
+        display: block;
+        text-align: center;
+        padding: 0.5rem;
+        text-decoration: none;
+        color: #555;
+        border-top: 1px solid #ddd;
+    }
+    nav a:hover{
+        color: #000;
+    }
+    main{
+        margin-top: 4rem;
+    }
+    .hidden{
+        display: none;
+    }
+
+</style>
+
+<header id="header">
+    <div class="container">
+        <button id="btn">&#9776;</button>
+    </div>
+    <nav class="hidden" id="nav">
+        <ul>
+            <li>
+                <a href="#">Link</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#">Link</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#">Link</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h1>Top navigation</h1>
+    <p>Lorem ipsum dolor,
+         sit amet consectetur adipisicing elit.
+          Ab dignissimos a fugit,
+           quos veritatis quae eaque,
+            officiis aliquam ea corrupti,
+             assumenda ipsam saepe ducimus deleniti consequuntur ex sequi natus hic?</p>
+
+</main>
+
+<script>
+
+    var btn = document.getElementById('btn');
+
+    btn.addEventListener('click', (e) =>{
+        var nav = document.getElementById('nav');
+
+        nav.classList.toggle('hidden');
+    });
+
+    window.addEventListener('click', (e) =>{
+        console.log(e.target); //이벤트가 발생한 엘리먼트
+
+        //화면에서 햄버거 버튼이 아닌 곳을 클릭했을 때
+        if(e.target !== btn){
+            nav.classList.add('hidden');
+        }
+
+
+    })
+
+</script> -->
+
+
+<!-- <style>
+    body{
+        height: 1000px;
+        margin: 0;
+    }
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        transition: background-color 0.5s;
+    }
+    .bg-image{
+        background-image: linear-gradient(to right, #0ef, #0af);
+        height: 400px;
+    }
+
+    .active{
+        background-color: #fff;
+    }
+    
+</style>
+
+<header id="header">
+Transparent NavBar
+</header>
+
+
+    <div class="bg-image"></div>
+
+
+<script>
+
+    var header = document.getElementById('header');
+
+    window.addEventListener('scroll', (e) => {
+        var scrollTop = document.documentElement.scrollTop;
+
+        console.log(scrollTop);
+
+        if(scrollTop > 50){
+            header.classList.add('active');
+        }else{
+            header.classList.remove('active');
+        }
+
+    });
+
+    
+</script> -->
+
+<!-- <style>
+    body{
+        height: 2000px;
+    }
+    #header{
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transition: top 0.2s;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #header.hidden{
+        top: -50px;
+    }
+
+    main{
+        margin-top: 75px;
+    }
+
+</style>
+
+
+<header id="header">
+Header
+</header>
+
+<main>
+        <h1>Switch NavBar</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, 
+            adipisicing elit. Incidunt nesciunt minus placeat hic reprehenderit quisquam odit corrupti vel, 
+            deleniti accusamus aliquid? Tempora modi necessitatibus harum accusantium cupiditate, 
+            obcaecati debitis perspiciatis.
+        </p>
+</main>
+
+
+<script>
+    
+    var header = document.getElementById('header');
+    var previousScrollTop = 0;
+    window.addEventListener('scroll', (e) => {
+
+        var scrollTop = document.documentElement.scrollTop;
+
+        console.log('이전 scroll top:', previousScrollTop);
+        console.log('현재 scroll top:', scrollTop);
+
+        if(scrollTop - previousScrollTop > 0){
+            //스크롤을 내리고 있을 때
+            header.classList.add('hidden');
+
+        }else{
+            //스크롤을 올리고 있을 때
+            header.classList.remove('hidden');
+        }
+
+        previousScrollTop = scrollTop;
+
+    });
+
+
+</script> -->
+
+
+
+<!--23.04.05-->
+
+
+
+<!-- <style>
+    #btn{
+        font-size: 2rem;
+        background-color: transparent;
+        cursor: pointer;
+        border: none;
+    }   
+
+    #side-bar{
+        position: fixed;
+        top:0;
+        left: 0;
+        bottom: 0;
+        width: 16rem;
+        background-color: #fff;
+        transition: 0.2s;
+        z-index: 1;
+    }
+
+    #overlay{
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0 0 0 0);
+    }
+
+    #side-bar.hidden{
+        left: -16rem;
+    }
+    #overlay.hidden{
+        display: none;
+    }
+
+
+</style>
+
+<button id="btn">&#9776;</button>
+<nav id="side-bar" class="hidden">
+    <h1>Logo</h1>
+    <ul>
+        <li>Menu</li>
+        <li>Menu</li>
+        <li>Menu</li>
+    </ul>
+</nav>
+
+<div id="overlay" class="hidden"></div>
+<main>
+    <h1>Side Bar</h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Animi sit expedita at hic cum ratione molestiae odit a nostrum,
+          consectetur sapiente qui, libero ad nesciunt aut.
+           Animi rerum ad deleniti!
+    </p>
+</main>
+
+<script>
+    var btn = document.getElementById('btn');
+    var sideBar = document.getElementById('side-bar');
+    var overlay = document.getElementById('overlay');
+
+    //사이드바 나타나게 하기
+    btn.addEventListener('click', ()=>{
+        sideBar.classList.remove('hidden');
+        overlay.classList.remove('hidden');
+        
+    }); 
+
+
+    //사이드바 숨기기
+    overlay.addEventListener('click', () => {
+            sideBar.classList.add('hidden');
+            overlay.classList.add('hidden');
+
+
+    });
+
+
+</script> -->
+
+
+<!-- <h1>Drawer</h1>
+<p>Add Some drag event.</p>
+
+<style>
+    #nav{
+        position: fixed;
+        left: 0;
+        top: 100vh;
+        width: 100%;
+        height: 100vh;
+        transition: top 0.5s;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        border-radius: 1rem 1rem 0 0;
+        background-color: #fff;
+    }
+
+    #drawer-handle{
+        width: 100%;
+        padding: 1rem;
+        cursor: grab;
+        border: none;
+        background-color: transparent;
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+</style>
+
+<nav id="nav" class="hidden">
+    <button id="drawer-handle">Drag me</button>
+    <ul>
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+    </ul>
+</nav>
+
+<button id="open-btn" type="button">More</button>
+
+<script>
+    var nav = document.getElementById('nav');
+    var drawHandle = document.getElementById('drawer-handle');
+    var openBtn = document.getElementById('open-btn');
+    var TOP;
+
+    //console.log(top); //window
+
+    openBtn.addEventListener('click', (e) => {
+        nav.style.top = '20vh';
+        
+    })
+
+    drawHandle.addEventListener('touchmove', (e) =>{
+        //touchmove : 누르고 움직이는 행위
+        //모바일로 돌려야 정상적인 반응 나옴
+        console.log('터치 중');
+
+        //뷰포트 탑과 손가락의 거리.
+        var clientY = e.touches[0].clientY;
+        
+        // innerHeight 뷰포트의 높이
+        TOP = clientY / window.innerHeight * 100;
+
+        console.log(TOP);
+        //실시간으로 스타일의 top을 바꾸기 위해 넣음.
+        nav.style.top = TOP + 'vh';
+    })
+
+    drawHandle.addEventListener('touchend', (e) => {
+        //...
+        console.log('터치 끝');
+
+        if(TOP > 50){ //Draw가 화면 절반 아래로 내려온 경우
+            nav.style.top = "100vh";
+        }else{
+            nav.style.top = "20vh";
+        }
+
+    })
+
+</script> -->
+
+<!-- 자바스크립트 sticky note 만들 예정 -->
+<!-- image editer 등.... -->
+<!-- breakout js .... -->
+<!-- frogger... -->
+
+
+<!-- <h1>Modal</h1>
+<style>
+    #overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0 0 0 / 0.2);
+    }
+
+    #modal {
+        background-color: #fff;
+        margin: 100px auto 0;
+        max-width: 20rem;
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+
+    #close-btn{
+        font-size: 2rem;
+        float: right;
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        padding: 1rem;
+        cursor: pointer;
+    }
+    .hidden{
+        display: none;
+    }
+
+</style>
+
+<button id="btn">Open</button>
+
+<div id="overlay" class="hidden">
+    <button id="close-btn">&times;</button>
+    <div id="modal">
+        <h1>Heading</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Totam, dolorum veritatis. Consectetur qui nesciunt eveniet aliquam fuga eos ab odit officiis. 
+            Dolores odit architecto maiores praesentium vero provident, exercitationem in.</p>
+    </div>
+</div>
+
+<script>
+    var overlay = document.getElementById('overlay');
+    var btn = document.getElementById('btn');
+    var closeBtn = document.getElementById('close-btn');
+   
+    //모달 열기
+    btn.addEventListener('click', () => {
+        overlay.classList.remove('hidden');
+
+    })
+
+    //모달 닫기
+    //overlay : 클릭을 감지하는 범위
+    overlay.addEventListener('click', (e) =>{
+        
+        //overlay 자체가 이벤트를 감지하는 역할이 됨
+
+        //이벤트가 발생한 엘리먼트 (현재 이벤트 : 클릭)
+        console.log(e.target);
+
+
+        //오버레이를 클릭했을 때
+        if(e.target === overlay){
+            overlay.classList.add('hidden');
+        }
+
+        //닫기버튼을 클릭했을 때
+        if(e.target === closeBtn){
+            overlay.classList.add('hidden');
+        }
+
+    })
+
+
+
+</script> -->
+
+<!-- Modal 이미지 문제 -->
+
+<style>
+    #overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0 0 0 / 0.2);
+    }
+
+    #modal1 {
+        background-color: #fff;
+        margin: 100px auto 0;
+        max-width: 20rem;
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+    #modal2 {
+        background-color: #fff;
+        margin: 100px auto 0;
+        max-width: 20rem;
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+    #modal3 {
+        background-color: #fff;
+        margin: 100px auto 0;
+        max-width: 20rem;
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+
+    #close-btn{
+        font-size: 2rem;
+        float: right;
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        padding: 1rem;
+        cursor: pointer;
+    }
+    .hidden{
+        display: none;
+    }
+    .defaultimg{
+        width: 100px;
+        height: 100px;
+        opacity: 0.8;
+        
+    }
+    img:hover{
+        opacity: 1;
+    }
+    
+</style>
+
+<h1>Q.Modal Gallery</h1>
+<div id="images">
+    <img src="hugplease.webp" alt="안아줘요" class="defaultimg" id="hug">
+    <img src="verythank.png" alt="정말고마워요" class="defaultimg" id="thank">
+    <img src="fuhaha.png" alt="푸하하" class="defaultimg" id="haha">
+</div>
+
+<div id="overlay" class="hidden">
+    <button id="close-btn">&times;</button>
+    <div id="modal1">
+        <img src="hugplease.webp" alt="안아줘요"> 
+    </div>
+    <div id="modal2">
+        <img src="verythank.png" alt="정말고마워요">
+    </div>
+    <div id="modal3">
+        <img src="fuhaha.png" alt="푸하하">
+    </div>
+</div>
+
+
+<script>
+    var overlay = document.getElementById('overlay');
+    var images = document.getElementById('images');
+    var closeBtn = document.getElementById('close-btn');
+
+    var hug = document.getElementById('hug');
+    var thank = document.getElementById('thank');
+    var haha = document.getElementById('haha');
+
+    var modal1 = document.getElementById('modal1');
+    var modal2 = document.getElementById('modal2');
+    var modal3 = document.getElementById('modal3');
+   
+    //모달 열기
+    images.addEventListener('click', (e) => {
+        console.log(e.target);
+        overlay.classList.remove('hidden');
+
+        if(e.target === hug){
+            modal1.classList.remove('hidden');
+            modal2.classList.add('hidden');
+            modal3.classList.add('hidden');
+        }
+        if(e.target === thank){
+            modal1.classList.add('hidden');
+            modal2.classList.remove('hidden');
+            modal3.classList.add('hidden');
+        }
+        if(e.target === haha){
+            modal1.classList.add('hidden');
+            modal2.classList.add('hidden');
+            modal3.classList.remove('hidden');
+        }
+
+    })
+
+    //모달 닫기
+    //overlay : 클릭을 감지하는 범위
+    overlay.addEventListener('click', (e) =>{
+        
+        //overlay 자체가 이벤트를 감지하는 역할이 됨
+
+        //이벤트가 발생한 엘리먼트 (현재 이벤트 : 클릭)
+        console.log(e.target);
+
+
+        //오버레이를 클릭했을 때
+        if(e.target === overlay){
+            overlay.classList.add('hidden');
+        }
+
+        //닫기버튼을 클릭했을 때
+        if(e.target === closeBtn){
+            overlay.classList.add('hidden');
+        }
+
+    });
+
+
+</script>
+
+
+</body>
+</html>

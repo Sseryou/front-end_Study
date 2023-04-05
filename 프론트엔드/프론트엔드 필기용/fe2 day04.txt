@@ -1,0 +1,89 @@
+rounded-xl
+
+이미지나 비디오 외에 텍스트 입력
+flex flex-col 활용
+
+
+가운데 위치
+place-items-center absolute translate-x-1/2 translate-y-1/2
+
+blockquote 태그
+부가 설명을 넣을때 쓴다.
+q 태그
+텍스트가 "에 싸여 있는 형태가 됨"
+
+cite 태그
+인용부, 이탤릭체가 기본으로 설정되어있음
+
+svg 태그
+확대해도 깨지지않는 이미지태그
+
+rotate 이용 이미지 회전
+z-index 활용이미지 2개를 자연스럽게 겹칠때 사용
+
+tracking-ff-tighter
+
+크기 단위 신경쓰기
+
+a 태그
+일반 링크처럼 사용, pointer 커서로 링크임을 알려주기 가능
+
+배경은 max-width를 의도적으로 없애 끊기지 않고 자연스러운 배경 사용 가능
+
+w-[calc(100% - 100px)]
+양쪽에 약간의 공간을 생기게 함(-100px.)
+calc는 CSS에서 계산하는 함수
+
+
+flex에서 gap을 사용해서 글자 간격들을 조절할수 있음
+버튼을 누르면 튀어나오는 추가 메뉴들은 display : block을 사용해서 표시
+
+drawer 
+버튼을 누르면 기존 항목들을 밀어내거나 또는 밀어내지 않고 나오는 메뉴들
+
+position
+
+column gap = gap-y-10
+
+gradient를 버튼에 호버했을때 적용시키는 방법으로 애니매이션을 만들 수 있음
+
+aside
+한쪽 방향으로 배치되는 태그 (부가적인 컨텐츠? 등)
+
+hr 가로줄을 생성하는 태그 (text-center의 영향을 받음)
+
+aria 태그? -> aria가 지원하던 많은 태그들을 HTML5로 통합이 되었기 때문에 aria보다 html5를 선호하는것이 좋다.
+
+divide-x-0 
+border를 만들때 쓰임 (0은 border를 만들때 쓰이지 않는다)
+
+
+div > p (자식 선택자) (CSS selector)
+
+:root 엘리먼트
+html을 선택하는것과 같음
+
+table-layout : auto;
+table-layout : fixed;
+
+em 태그
+강조할 때 쓰임 <em>paragrape<em>
+
+column-count 속성
+
+열을 쪼갤때 사용 column-count : 3 = 3갈래로 갈라짐
+column-rule-style : solid; = 쪼갠 열 가운데마다 실선 추가
+
+backdrop-filter : blur(5px); (배경 가운데에 흐림 처리) 
+필터는 여러 종류가 있음
+
+space-between -> 메뉴를 양 옆으로 배분할때 잘 쓰임
+
+
+
+
+
+
+
+
+

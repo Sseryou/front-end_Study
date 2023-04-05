@@ -1,0 +1,75 @@
+tailwind를 사용할때 헤드에 넣어야할 태그
+<script src="https://cdn.tailwindcss.com"></script>
+
+
+인용부. 블록쿼트
+
+보더를 두껍게 해서 포스트잇처럼 보이게 가능
+보더는 개발자도구 상에서 밝은 노란색
+
+px = padding x축
+py = padding y축
+
+bg-gray-200 숫자는 50부터  900까지, 갈수록 진해짐
+
+border-l-8 왼쪽에만 보더 적용 8px, 방향 없으면 전체 적용, 그냥 border이면 1픽셀
+ t, r, b, l (방향)
+
+border-l-(색상)-(색상명도) : 왼쪽 보더의 색상
+
+min-h-[5000px](body class에 넣어 최대 높이 제한, 대괄호로 직접 값 지정)
+
+my-4 = margin y축 4px
+
+grayscale-[80%] = 흑백화, 0과 100이 아니면 개발자가 따로 값 지정
+
+font-weight
+100 ~ 900까지 (100단위, 기본값 400)
+
+span을 이용해서 뒷배경과 앞의 글자색이 다르게 배치 가능
+
+
+tab 설계
+한쪽을 클릭하면 다른 한쪽은 none 처리해야함
+형제 선택자
+
+
+
+shadow : 커질수록 그림자가 커짐
+
+flex-wrap을 하지 않으면 아이템이 밑으로 가지 않음
+
+peer
+tailwind에서 형제관계가 필요할때 사용
+그룹화를 해야하기 때문에 이름을 일치시켜야 함 (name="menu")등으로..
+
+peer-checked = 체크가 되었을 때
+이걸 이용해서 눌렀을때만 스타일 적용이 되게 가능
+
+예시) peer-checked/eat:bg-neutral-400
+
+input의 id 
+label의 for와 일치시켜서 연결
+
+checked로 처음에 선택할 버튼 선택
+
+w-1/2 = 절반 w-full = 100%
+
+fieldset = 비슷한걸 묶는 태그
+
+tailwind는 order속성이 필요가 없음. 그래서 input끼리 모아둘 수 있음
+
+tracking-widest - 자간
+
+tailwind에서는 기본적으로 보더가 없기 때문에 보더랑 보더색상(기본 회색)을 넣어야함
+
+a 태그에 class로 underline 집어넣기 가능 (Text Decoration)
+
+scroll-smooth 속성을 이용하면 메뉴 등으로 화면을 이동시킬때 부드럽게 이동 가능
+html에 추가
+
+<html class="scroll-smooth">
+  <!-- ... -->
+</html>
+
+lg:hidden 을 사용하면 large 사이즈(1024px) 부터는 그 속성을 감추게 된다.

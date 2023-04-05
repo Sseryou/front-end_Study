@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my first project</title>
+    <!-- tailwindcss cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap" rel="stylesheet">
+    
+
+    <style>
+        body{
+            font-family: 'Noto Serif KR', serif;
+        }
+    </style>
+
+</head>
+
+<body class="bg-stone-800">
+
+    <!-- menu -->
+    
+    <nav class="sticky top-0 p-2 w-full bg-stone-500 z-10">
+        <ul class="flex">
+            <li class="w-1/4">
+                <a href="#cafeinfo" class="block text-center text-sm lg:text-lg font-semibold text-black px-4 py-2 hover:bg-stone-400">
+                    카페소개
+                </a>
+            </li>
+            <li class="w-1/4">
+                <a href="#food" class="block text-center text-sm lg:text-lg font-semibold text-black px-4 py-2 hover:bg-stone-400">
+                    먹을거리
+                </a>
+            </li>
+            <li class="w-1/4">
+                <a href="#event" class="block text-center text-sm lg:text-lg font-semibold text-black px-4 py-2 hover:bg-stone-400">
+                    현재 진행중인 이벤트
+                </a>
+            </li>
+            <li class="w-1/4">
+                <a href="#location" class="block text-center text-sm lg:text-lg font-semibold text-black px-4 py-2 hover:bg-stone-400">
+                    찾아오시는 길
+                </a>
+            </li>
+        </ul>
+     </div>
+    </nav>
+
+     <!-- Main video -->
+     <div class="h-[500px] bg-cover bg-center">
+        <video autoplay muted loop id="myVideo" class="m-auto flex flex-col max-h-[510px] space-between relative">
+            <source src="img\cup-of-coffee-3595.mp4" type="video/mp4">
+          </video>
+          <!-- <div class="text-6xl text-center text-white z-5 absolute">
+            Coffee 'ON'
+          </div> -->
+    </div>
+
+
+    <main class="max-w-2xl mx-auto px-4">
+
+        <!-- CafeInfo -->
+        <div id="cafeinfo" class="py-12">
+            <h1 class="text-4xl text-center italic text-white underline decoration-white tracking-widest">
+                카 페 소 개
+            </h1>
+        </div>
+         <p class="text-lg my-4 text-white text-center">
+            여기, 이 소박한 카페는 아늑한 분위기가 자랑이며, 
+            벽면에 걸린 작은 그림들과 조명이 조화롭게 어우러져 편안한 분위기를 만들어 줍니다. 
+            메뉴는 커피 몇 종류와 간단한 디저트로 구성되어 있으며, 신선한 재료를 사용해 정성스럽게 만들어집니다. 
+            바쁜 일상에서 조금 떨어져 카페에서 한잔의 커피와 함께 조용한 시간을 보내보는 것은 어떨까요? 
+            이 곳에서 잠깐 편하게 있다 가세요.
+         </p>
+
+        <!-- food -->
+
+        <div id="food" class="py-12">
+            <h1 class="text-4xl text-center italic text-white underline decoration-white tracking-widest">
+                먹 을 거 리
+            </h1>
+        </div>
+       <div class="grid grid-cols-2">
+        
+        <p class="text-sm my-4 text-white text-center"><img class="h-72 w-72 mt-4" src="img\브런치 토스트.jpg" alt="">브런치 토스트, 4000￦</p>
+        
+        <p class="text-sm my-4 text-white text-center"><img class="h-72 w-72 mt-4" src="img\와!플.jpg" alt="">와플, 4000￦</p>
+        
+        <p class="text-sm my-4 text-white text-center"><img class="h-72 w-72 mt-4" src="img\카페라떼.jpg" alt="">카페라떼, 2000￦</p>
+        
+        <p class="text-sm my-4 text-white text-center">
+            <img class="h-72 w-72 mt-4" src="img\카페모카빵.jpg" alt="">모카빵, 2500￦
+        </p>
+        </div>
+        <!-- event -->
+
+        <div id="event" class="py-12">
+            <h1 class="text-4xl text-center italic text-white underline decoration-white tracking-widest">
+                현재 진행중인 이벤트
+            </h1>
+            <br>
+            <h2 class="text-2xl text-center text-white tracking-widest">
+                진행중인 이벤트가 없습니다.
+            </h2>
+        </div>
+
+
+        <!-- location -->
+
+        <div id="location" class="py-12">
+            <h1 class="text-4xl text-center italic text-white underline decoration-white tracking-widest">
+                찾아오시는 길
+            </h1>
+        </div>
+
+        <div class="grid grid-cols-2">
+            <iframe class="h-[300px] w-[300px]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d197.86249019060315!2d126.71215081287778!3d37.48904944354582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b7c3e7e9663d1%3A0xc8955ea4cc17637!2z7Luk7ZS87Jio!5e0!3m2!1sko!2skr!4v1678095313118!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        
+        <div class="flex">
+            <p class="text-sm my-4 text-white flex">
+                인천광역시 부평구 부평동 안남로 65-1
+                <br>
+                부평동 284-80
+            </p>
+        </div>
+        </div>
+        
+
+    </main>
+
+    <footer>
+            <!-- address -->
+            <div>
+                <hr class="mt-8 wt-max border-t-gray-400">
+                <p class="my-12 text-sm text-gray-400 justify-center text-center">커피온, 
+                    인천광역시 부평구 부평동 안남로 65-1
+                </p>
+            </div>
+    </footer>
+    
+
+    
+    
+
+    
+
+
+</body>
+</html>

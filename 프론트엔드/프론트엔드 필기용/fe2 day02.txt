@@ -1,0 +1,38 @@
+사이드바는 width를 적용하는 경우가 많음. 대략 80정도?
+80 다음은 96, 96이 끝
+height는 100%(full)
+
+hidden 속성
+
+lg:block = 1024px 이상일때 적용 , block
+
+z-10(20, 30, 40, 50, auto)
+엘리먼트가 서로 겹쳤을때 화면 앞으로 얼마정도 오는지 결정 (우선도 개념)
+
+로고를 위해, 충분한 공간을 줌
+margin-top 12, height-48 이용
+가운데 배치용으로 justify-center 사용
+
+max-w-screen-lg = max-width : 1024px;
+
+
+lg:ml-80
+large(1024px) 사이즈부터 margin-left 80을 적용(20rem)
+
+border-t-8 = border-top 8px
+
+rounded = 둥굴게 처리(border 등...)
+rounded-full을 하면 완전히 둥굴어짐. 한쪽 모서리나 한쪽 방향만 둥굴게 할 수도 있음
+
+grid grid-cols-1 md:grid-cols-2
+
+기본으로 grid column을 1로 설정해서 1줄만 보이게 했다가, middle 이상이면 2줄 보이게 함
+
+margin이 겹치면 flex가 됨. 즉 겹치는 부분이 사라지고 하나만 적용
+
+object-cover
+
+html video 태그
+
+
+실제적으로 운용되는 페이지는 footer 내용이 많음.
