@@ -1040,7 +1040,7 @@ Header
 
 <!-- Modal 이미지 문제 -->
 
-<style>
+<!-- <style>
     #overlay{
         position: fixed;
         top: 0;
@@ -1118,6 +1118,8 @@ Header
 
 
 <script>
+    //이렇게 할 필요없이, 이벤트를 받아서 소스를 바꿔주면 되는
+    //일이었다....
     var overlay = document.getElementById('overlay');
     var images = document.getElementById('images');
     var closeBtn = document.getElementById('close-btn');
@@ -1177,6 +1179,334 @@ Header
 
 
 </script>
+ -->
+
+ <!--2023-04-10-->
+
+<!-- <h1>Q. Modal Gallery</h1>
+<style>
+    #overlay{
+        position: fixed;
+        background-color: rgba(0 0 0 / 0.5);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+    #modal{
+        width:20rem;
+        height: 20rem;
+        object-fit: cover;
+        display: block;
+        margin: 100px auto 0;
+        border-radius: 1rem;
+    }
+    #close-btn{
+        font-size: 2rem;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        float: right;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+    }
+    .container{
+        display: flex;
+    }
+    .container img{
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        cursor: pointer;
+        opacity: 0.8;
+    }
+    .container img:hover{
+        opacity: 1;
+    }
+    .hidden{
+        display: none;
+    }
+
+</style>
+<div id="overlay" class="hidden">
+    <button id="close-btn">&times;</button>
+    <img src="" alt="" id="modal">
+</div>
+
+<div class="container">
+    <img class="thumbnail" src="fuhaha.png" alt="">
+    <img class="thumbnail" src="hugplease.webp" alt="">
+    <img class="thumbnail" src="verythank.png" alt="">
+</div>
+
+<script>
+    var overlay = document.getElementById('overlay');
+    var modal = document.getElementById('modal');
+    var thumbnails = document.getElementsByClassName('thumbnail');
+    var closebtn = document.getElementById('close-btn');
+
+    console.log(thumbnails); //HTMLCollection(length)
+
+    for(var i=0; i<thumbnails.length; i++){
+        thumbnails[i].addEventListener('click', (e)=>{
+            //console.log(e.target);
+            console.log(e.target.src);
+
+            //오버레이 보이게하기
+            overlay.classList.remove('hidden');
+            //썸네일의 소스를 모달 이미지에 전달한다.
+            modal.src = e.target.src;
+        })
+        
+    }
+    overlay.addEventListener('click', (e) => {
+        console.log(e.target); //이벤트가 발생한 엘리먼트
+
+        //오버레이 클릭햇을 때
+        if(e.target === overlay){
+            overlay.classList.add('hidden');
+        }
+
+        //x버튼 눌렀을 때
+        if(e.target === closebtn){
+            overlay.classList.add('hidden');
+        }
+    });
+
+</script> -->
+
+<!-- <h1>Gallery</h1>
+
+<style>
+/* main image */
+#main{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    background-color: #ddd;
+}
+/* thumbnails */
+.container{
+    display: flex;
+}
+.thumbnail{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 0.5rem;
+}
+
+/* toggle class */
+
+.active {
+    outline: 2px solid #0bf;
+}
+
+
+
+</style>-->
+
+
+<!--main image-->
+<!-- <img src="fuhaha.png" alt="" id="main"> -->
+
+<!--thumbnails-->
+<!-- <div class="container">
+    <img class="thumbnail active" src="fuhaha.png" 
+    alt="" onclick="jumpTo(0)">
+    <img class="thumbnail" src="hugplease.webp" 
+    alt="" onclick="jumpTo(1)">
+    <img class="thumbnail" src="verythank.png" 
+    alt="" onclick="jumpTo(2)">
+</div>
+
+<script>
+    var thumbnails = document.getElementsByClassName('thumbnail');
+    var main = document.getElementById('main');
+    var previousIndex = 0;
+
+    // console.log(thumbnails);
+
+    // HTML의 이벤트 attribute
+    // onEventName="eventHandler()"
+    // onclick시, jumpto function 함수 호출
+
+    
+    function jumpTo(thisIndex){
+        console.log('이전 인덱스 값 : ', previousIndex);
+        console.log('현재 인덱스 값 : ', thisIndex);
+
+
+        //선택된 썸네일을 다시 클릭했을때 
+        //active 클래스가 제거되지 않게 해주는 코드
+        if(previousIndex === thisIndex){
+            return;
+        }
+
+
+        //thisIndex : thumbnails 내에서 이벤트 타겟의 index값과 같다.
+        console.log('타깃 : ', thumbnails[thisIndex]);
+
+        //이벤트 타깃에 active 클래스를 추가한다.
+        thumbnails[thisIndex].classList.add('active');
+
+        //이전 인덱스를 가진 이벤트 타깃의 active 클래스를 제거한다
+        thumbnails[previousIndex].classList.remove('active');
+
+
+        //썸네일의 소스를 메인 이미지에 전달하는 코드
+        main.src = thumbnails[thisIndex].src;
+
+        //이전 인덱스값 구하기. 맨 밑에 있어야 한다.
+        previousIndex = thisIndex;
+    }
+
+
+</script> -->
+
+
+<h1>Carousel</h1>
+
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    .wrap{
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+    }
+    /* images */
+    #container{
+        width:600px;
+        height: 200px;
+        display: inline-flex;
+        transition: 0.2s;
+    }
+    .item{
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+    /* buttons */
+    #prev, #next{
+        position: absolute;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+    }
+
+    #prev{
+        top:0;
+        left: 0;
+    }
+    
+    #next{
+        top:0;
+        right: 0;
+    }
+
+    /* indicator */
+    .indicator{
+        position: absolute;
+        bottom: 0.25rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .dot{
+        display: inline-block;
+        width: 0.5rem;
+        height: 0.5rem;
+        background-color: #ddd;
+        border-radius: 50%;
+    }
+
+    /* toggle class */
+    .hidden{
+        visibility: hidden;
+    }
+
+    .active{
+        background-color: #555;
+    }
+
+</style>
+
+<div class="wrap">
+    <!-- images -->
+    <div id="container">
+        <img class="item" src="fuhaha.png" alt="">
+        <img class="item" src="hugplease.webp" alt="">
+        <img class="item" src="verythank.png" alt="">
+    </div>
+
+    <!-- button -->
+    <button id="prev" class="hidden" onclick="navigateTo(-1)">&#10094;</button>
+    <button id="next" onclick="navigateTo(1)">&#10095;</button>
+
+    <!-- indicator -->
+    <div class="indicator">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</div>
+
+<script>
+    var container = document.getElementById('container');
+    var prev = document.getElementById('prev');
+    var next = document.getElementById('next');
+    var dots = document.getElementsByClassName('dot');
+    var imageWidth = 200;
+    var previousIndex = 0;
+    var thisIndex = 0;
+
+    function navigateTo(data){
+
+        thisIndex += data;
+
+        console.log(thisIndex);
+
+        //이미지 움직이기
+        container.style.transform = `translateX(-${thisIndex * imageWidth}px)`;
+
+        //버튼 토글
+
+        if(thisIndex === 0){ //첫번째 이미지에 있는 경우
+            prev.classList.add('hidden');
+        }else{
+            prev.classList.remove('hidden');
+        }
+
+        if(thisIndex === 2){ //세번째 이미지에 있는 경우
+            next.classList.add('hidden');
+        }else{
+            next.classList.remove('hidden');
+        }
+
+        // indicator
+        dots[thisIndex].classList.add('active');
+        dots[previousIndex].classList.remove('active');
+
+        // 이전 인덱스값 구하기
+        previousIndex = thisIndex;
+
+
+    }
+
+
+</script>
+
+
+
+
 
 
 </body>
