@@ -1,0 +1,208 @@
+<!-- 23.04.12 -->
+
+<!-- setInterval(callback, ms)
+    1000ms = 1초
+    ms마다 callback 실행하는 함수 -->
+
+
+<!-- <style>
+    *{
+        box-sizing: border-box;
+    }
+     /* main image */
+    .album{
+        width: 300px;
+        height: 300px;
+        position: relative;
+    }
+   
+    #main{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* thumbnails */
+    .container{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        bottom: 1rem;
+        width: 100%;
+       
+    }
+
+    
+    .thumbnail{
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        padding: 0.25rem;
+    }
+
+    /* toggle class */
+
+    .active{
+        border: 2px solid skyblue;
+    }
+
+</style>
+
+<h1>Auto Albums</h1>
+
+<div class="album">
+    
+     <img id="main" src="fuhaha.png" alt="">
+     
+    
+    <div class="container">
+        <img class="thumbnail active" src="fuhaha.png">
+        <img class="thumbnail" src="hugplease.webp">
+        <img class="thumbnail" src="verythank.png">
+    </div>
+</div>
+
+<script>
+    var thumbnails = document.getElementsByClassName("thumbnail");
+    var main = document.getElementById('main');
+    var thisIndex = 0;
+    var previousIndex = 0;
+
+    setInterval(navigate, 3000);
+
+    function navigate(){
+
+        thisIndex++;
+        //마지막 index보다 커질때 index를 0으로 만든다.
+        if(thisIndex === thumbnails.length){
+            thisIndex = 0;
+        }
+
+        console.log(thisIndex);
+
+        //썸네일의 아웃라인 조정하기
+        thumbnails[thisIndex].classList.add('active');
+        thumbnails[previousIndex].classList.remove('active');
+
+        //메인 이미지의 소스를 현재 index에 해당하는 썸네일의 소스로 만든다.
+        main.src = thumbnails[thisIndex].src;
+
+        //이전 index값 구하기
+        previousIndex = thisIndex;
+
+    }
+
+  
+
+</script> -->
+
+
+<!-- <style>
+    .el{
+        opacity: 0;
+        transition: 0.5s;
+    }
+    .el.opacity-100{
+        opacity: 1;
+    }
+
+</style>
+
+<h1>뷰포트에 진입할때 엘리먼트 나타나게 하기</h1>
+
+<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quod ratione nulla iusto, dolore quam voluptate! Et sequi enim asperiores accusantium esse at dicta quisquam labore repellat, nihil exercitationem ad.</h1>
+<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quod ratione nulla iusto, dolore quam voluptate! Et sequi enim asperiores accusantium esse at dicta quisquam labore repellat, nihil exercitationem ad.</h1>
+<h1 class="el">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quod ratione nulla iusto, dolore quam voluptate! Et sequi enim asperiores accusantium esse at dicta quisquam labore repellat, nihil exercitationem ad.</h1>
+<h1 class="el">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quod ratione nulla iusto, dolore quam voluptate! Et sequi enim asperiores accusantium esse at dicta quisquam labore repellat, nihil exercitationem ad.</h1>
+<h1 class="el">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quod ratione nulla iusto, dolore quam voluptate! Et sequi enim asperiores accusantium esse at dicta quisquam labore repellat, nihil exercitationem ad.</h1>
+
+
+
+<script>
+    var els = document.getElementsByClassName('el');
+
+    window.addEventListener('scroll', (e) =>{
+
+        //뷰포트의 높이
+        var viewportHeight = window.innerHeight;
+
+        console.log(viewportHeight);
+
+        // //뷰포트 탑과 엘리먼트 탑사이의 거리
+        // var y = el.getBoundingClientRect().y;
+
+        // console.log(y);
+
+        // //충분히 뷰포트에 진입했을때.
+        // if(y < viewportHeight - 200){
+        //     el.classList.add('opacity-100');
+        // }
+
+        //여러 개의 엘리먼트에 스타일을 적용한다.
+        for(var i = 0; i <els.length; i++){
+            var y = els[i].getBoundingClientRect().y;
+
+            if(y < viewportHeight - 200){
+                els[i].classList.add('opacity-100');
+            }
+        }
+
+    });
+
+
+</script> -->
+
+<h1>Drag and Drop</h1>
+
+<style>
+    #drop-zone{
+        border: 4px dashed #ddd;
+        width: 200px;
+        height: 100px;
+        padding: 1rem;
+    }
+
+</style>
+
+<div id="drop-zone">
+    <p>한 개 이상의 파일을 드래그 앤 드롭 해보세요.</p>
+</div>
+
+<script>
+    var dropZone = document.getElementById('drop-zone');
+
+    dropZone.addEventListener('dragover', dragOverHandler);
+    dropZone.addEventListener('drop', dropHandler);
+
+    function dropHandler(e){
+
+        //파일 열기를 실행하지 않는다.
+        e.preventDefault();
+
+        //파일
+        //console.log(e.dataTransfer.files); //수정 불가능한 리스트 객체
+
+        // Array.from(): 순회 가능한 객체를 배열로 만든다.
+        var files = Array.from(e.dataTransfer.files);
+
+        //console.log(files);
+
+        //console.log('드롭 했습니다.')
+
+        for(var i = 0; i< files.length; i++){
+            console.log(files[i].name);
+        }
+
+        // AJAX 요청 ...
+        alert('제출되었습니다.');
+
+    }
+    function dragOverHandler(e){
+
+        // 브라우저의 기본값을 실행하지 않는다(파일 열기)
+        e.preventDefault();
+
+        console.log('드래그 중입니다.')
+    }
+
+</script>
