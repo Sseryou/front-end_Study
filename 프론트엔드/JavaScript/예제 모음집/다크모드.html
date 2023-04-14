@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body{
+            padding:25px;
+            background-color: white;
+            color:black;
+            font-size: 25px;
+            transition: 1s;
+        }
+        .dark-mode{
+            background-color: black;
+            color:white;
+            transition: 1s;
+        }
+    </style>
+
+    <h1>다크모드</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id sit est repellendus vitae pariatur porro atque eos delectus molestiae odit possimus, nam quo impedit, fugiat officiis aut deserunt error adipisci.</p>
+    <input type="checkbox" name="" id="checkbox">
+    <label for="checkbox">다크모드 사용하기</label>
+    <script>
+         var checkbox = document.getElementById('checkbox');
+
+         //localStorage.getItem(key) : 데이터를 가져온다.
+         var isDarkMode = localStorage.getItem('darken');
+
+         console.log(isDarkMode);
+
+         //페이지가 로드되었을 때
+         if(isDarkMode){
+            document.body.classList.add('dark-mode');
+            checkbox.checked = true;
+         }
+
+
+         //체크박스의 체크 상태가 바뀔 때
+         checkbox.addEventListener('change', (e)=>{
+            var checked = e.target.checked;
+            
+            //checked는 boolean값을 갖고 있음을 알 수 있다.
+            console.log(checked);
+            if(checked){
+                document.body.classList.add('dark-mode');
+
+                //localStorage.setItem(key,value)
+                //로컬 스토리지에는 문자열 타입의 데이터만 저장할 수 있다.
+                localStorage.setItem('darken', new Date().toLocaleString());
+            } else{
+                document.body.classList.remove('dark-mode');
+
+                //localStorage.removeItem(key) : 데이터를 삭제한다.
+                localStorage.removeItem('darken')
+            }
+         });
+    </script>
+
+
+
+    
+</body>
+</html>
