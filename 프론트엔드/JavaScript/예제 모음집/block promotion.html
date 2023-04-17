@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        #promotion{
+            padding: 1rem;
+            background-color: rgba(212, 212, 212, 0.699);
+        }
+        #close-btn{
+            float: right;
+            cursor: pointer;
+        }
+        .hidden{
+            display: none;
+        }
+
+    </style>
+
+    <h1>Block promotion</h1>
+    <div id="promotion">
+        <span id="close-btn">&times;</span>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <button id="block-btn">다시 보지 않기</button>
+    </div>
+
+
+    <script>
+        //프로모션 구현
+        //다시 보지 않기를 누르면 로컬 스토리지에 다시 보지 않기의 정보를 저장해서
+        //페이지를 새로고침 해도 안보이게 한다.
+        //별개로 x버튼만 누르면 사라지게 한다. 이건 다시 봐야함.
+
+        var closeBtn = document.getElementById('close-btn');
+        var blockBtn = document.getElementById('block-btn');
+        var promotion = document.getElementById('promotion');
+
+        //페이지가 로드되었을 때
+        if(localStorage.getItem('blockedAt')){
+            promotion.classList.add('hidden');
+        }
+
+
+        //닫기 버튼을 눌렀을 때
+       closeBtn.addEventListener('click', () => {
+            promotion.classList.add('hidden');
+       });
+
+       //블록 버튼을 눌렀을 때
+       blockBtn.addEventListener('click', ()=>{
+            promotion.classList.add('hidden');
+
+            //로컬 스토리지에 블록된 시간을 저장한다.
+            //new Date() = 현재 시간을 불러온다.
+            //toLocaleString = 문자열 형태로 바꾼다.
+            localStorage.setItem('blockedAt', new Date().toLocaleString);
+       });
+        
+    </script>
+
+
+    
+</body>
+</html>

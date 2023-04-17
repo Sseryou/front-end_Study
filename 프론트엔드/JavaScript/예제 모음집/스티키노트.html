@@ -123,12 +123,35 @@
 
         //노트를 편집하는 함수
         function editNote(id, content){
-            console.log(id, content);
+            //console.log(id, content);
+
+            var notes = getDocs(); //로컬스토리지에서 데이터를 가져온다/
+           
+
+            for(var i = 0; i<notes.length; i++){
+                if(notes[i].id === id){
+                    notes[i].content = content;
+                }
+            }
+            console.log(notes);
+            saveDoc(notes)//업데이트된 내용을 저장한다.
+
         }
 
         //노트를 삭제하는 함수
         function deleteNote(id, noteElement){
             console.log(id, noteElement);
+           
+            var notes = getDocs();
+            for(var i=0; i<notes.length; i++){
+                if(notes[i].id === id){
+                    notes.splice(i,1);
+                    //배열에서 아이템을 제거 할 때 사용됨.
+                }
+            }
+            saveDoc(notes);
+
+           
 
             container.removeChild(noteElement);
         }
