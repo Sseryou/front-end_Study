@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body{
+            height: 2000px;
+        }
+       .header{
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        background-color: #f1f1f1;
+       }
+       .progress-container{
+        width: 100%;
+        height: 8px;
+        background-color: #ccc;
+       }
+       .prograss-bar{
+        height: 8px;
+        background: aquamarine;
+       }
+
+
+    </style>
+        <div class="header">
+            <h2>Scroll Indicator</h2>
+            <div class="progress-container">
+                <div class="prograss-bar" id="indicatorbar"></div>
+            </div>
+        </div>
+        
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, sed minus autem alias sequi iusto neque deleniti explicabo maxime, possimus ut distinctio obcaecati excepturi ipsam vitae soluta odit incidunt nostrum?
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quasi, reiciendis incidunt architecto aperiam cumque fuga officia itaque qui voluptas velit deserunt numquam, perferendis earum ipsam minus harum? Quod, dolor.
+        </p>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto ullam ipsa ratione illo! Expedita temporibus, aliquam assumenda, quibusdam similique corporis enim eaque quia ea dolore officiis ut cupiditate debitis ad.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. At, ab illo commodi sapiente perspiciatis incidunt accusantium iste. Tempore ex itaque voluptatum odio in non corrupti dicta veritatis laudantium magnam! Repellat.
+        </p>
+
+    <script>
+        window.onscroll = function() {myFunction()};
+        function myFunction(){
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            //스크롤을 아래로 내릴수록 값 증가
+            //console.log(winScroll);
+
+            var height = document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
+            //항상 최대 높이를 가짐
+            //console.log(height);
+
+            var scrolled = (winScroll / height) * 100;
+            //console.log(scrolled);
+
+            //indicatorbar의 width를 scrolled% 로 설정.
+            document.getElementById("indicatorbar").style.width = scrolled + "%";
+        }
+        
+    </script>
+
+
+
+    
+</body>
+</html>

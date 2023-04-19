@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="#home">Home</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#posts">Posts</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="root"></div>
+
+    <script>
+        //해시가 바뀔 때마다 호출
+        window.addEventListener('hashchange', (e) =>{
+            //바뀐 해시값의 위치(location.hash)
+           router(location.hash);
+        });
+
+        //페이지가 로드 될 때
+        window.addEventListener('load', () =>{
+            router(location.hash);
+        });
+
+        //요청 url과 적절한 페이지를 연결시키는 역할을 한다.
+        function router(hash){
+            var url = hash.substr(1);
+
+            console.log(url);
+
+            var routes = [
+                {path : 'home', element: Home},
+                {path : 'posts', element: Posts},
+                {path : 'post/2', element: Post},
+                {path : 'contact', element: Contact},
+            ]
+            
+            //요청 url과 일치하는 path를 가진 라우트의 엘리먼트를
+            //화면에 렌더링한다.
+            for(var i = 0; i <routes.length; i++){
+                if(routes[i].path === url){
+                    document
+                        .getElementById('root')
+                        .innerHTML = routes[i].element();
+                }
+            }
+        }
+
+
+        //홈
+        function Home(){
+            return `
+                <h1>Home</h1>
+                <p>Welcome to my blog.</p>
+
+            `
+        }
+        //게시글 목록 페이지
+        function Posts(){
+            return `
+                <h1>Posts</h1>
+                <ul>
+                    <li>
+                        <a href="#post/2">Second post</a>
+                    </li>    
+                    <li>
+                        First post
+                    </li>
+                </ul>
+
+            `
+        }
+        //게시글 상세보기 페이지
+        function Post(){
+
+            //필요할 때 서버에 데이터를 요청한다.
+            var DATA = {
+                id : 2,
+                content : '시계는 살 수 있지만 시간은 살 수 없습니다.',
+                createdAt : '4월 19일, 2023년'
+            }
+
+            return`
+                <h1>Second post</h1>
+                <small>
+                    posted <i>${DATA.createdAt}</i>
+                </small>
+                <p>${DATA.content}</p>
+            `
+
+        }
+        
+        // 컨텍 페이지
+        function Contact(){
+            return `
+                <h1>Contact</h1>
+                <p>John@example.com</p>
+
+            `
+        }
+
+
+    </script>
+
+
+
+    
+</body>
+</html>
